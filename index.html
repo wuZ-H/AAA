@@ -2,20 +2,417 @@
 <html>
 <head>
   <title>AAA</title>
+
   <script>
+    var step=0;
+    var counter_btn=1;
+    var choice=[0];
     var ans=[0,0,0,0,0,0,0];
+    
+    function btn_click(btn_num) {
+      //set_inner("btn_num","btn_num="+btn_num);
+      choice[step]=btn_num;
+      //set_inner("choice","choice="+choice);
+      choose(btn_num);
+      //set_inner("ans","ans="+ans);
+      step = step + 1;
+      //set_inner("step","step="+step);
+    }
+
+    function choose(n){
+      switch (step){
+        case 0: situ_0();break;
+        case 1: situ_1(n);break;
+        case 2: situ_2(n);break;
+        case 3: situ_3(n);break;
+        case 4: situ_4(n);break;
+        case 5: situ_5(n);break;
+        case 6: situ_6(n);break;
+        case 7: situ_7(n);break;
+        case 8: situ_8(n);break;
+      }
+    }
+
+    function situ_0(){
+      create_btn();
+      set_size("btn1","50px","100px");
+      set_size("btn2","50px","100px");
+      set_inner("scene","貢丸滾出來");
+      set_inner("btn1","滾向小巷");
+      set_inner("btn2","滾向大路");
+    }
+
+    function situ_1(n){
+      switch(n){
+        case 1:
+          set_inner("scene","小巷");
+          set_inner("btn1","被狗叼走");
+          set_inner("btn2","滾進水溝");
+          ans[2]=5;
+          break;
+        case 2:
+          set_inner("scene","大路");
+          set_inner("btn1","跟隨人群");
+          set_inner("btn2","到處冒險");
+          ans[2]=2;
+          break;
+      }
+    }
+
+    function situ_2(n){
+      switch(choice[1]){
+        case 1:
+          situ_2_1(n);
+          break;
+        case 2:
+          situ_2_2(n);
+          break;
+      }
+    }
+
+    function situ_2_1(n){
+      switch(n){
+        case 1:
+          set_inner("scene","狗是");
+          set_inner("btn1","流浪狗");
+          set_inner("btn2","有主人");
+          ans[1]=3;
+          break;
+        case 2:
+          set_inner("scene","水溝");
+          set_inner("btn1","沿著水流");
+          set_inner("btn2","看著水流");
+          ans[1]=5;
+          break;
+      }
+    }
+
+    function situ_2_2(n){
+      switch(n){
+        case 1:
+          set_inner("scene","人群");
+          set_inner("btn1","光鮮亮麗");
+          set_inner("btn2","平穩實際");
+          ans[1]=2;
+          break;
+        case 2:
+          set_inner("scene","冒險");
+          set_inner("btn1","穿越馬路");
+          set_inner("btn2","等紅燈");
+          ans[1]=4;
+          break;
+      }
+    }
+
+    function situ_3(n){
+      switch(choice[1]){
+        case 1:
+          situ_3_1(n);
+          break;
+        case 2:
+          situ_3_2(n);
+          break;
+      }
+    }
+    function situ_3_1(n){
+      switch(choice[2]){
+        case 1:
+          set_inner("scene","狗的主人");
+          set_inner("btn1","年輕");
+          set_inner("btn2","老");
+          switch(n){
+            case 1:
+              ans[4]=4;
+              break;
+            case 2:
+              ans[4]=2;
+              break;
+          }
+          break;
+        case 2:
+          set_inner("scene","水流");
+          set_inner("btn1","急");
+          set_inner("btn2","緩");
+          switch(n){
+            case 1:
+              ans[4]=5;
+              break;
+            case 2:
+              ans[4]=3;
+              break;
+          }
+          break;
+      }
+    }
+
+    function situ_3_2(n){
+      switch(choice[2]){
+        case 1:
+          set_inner("scene","他們");
+          set_inner("btn1","和你一樣");
+          set_inner("btn2","不一樣");
+          switch(n){
+            case 1:
+              ans[4]=3;
+              break;
+            case 2:
+              ans[4]=2;
+              break;
+          }
+          break;
+        case 2:
+          set_inner("scene","走向");
+          set_inner("btn1","圓環");
+          set_inner("btn2","岔路");
+          switch(n){
+            case 1:
+              ans[4]=5;
+              break;
+            case 2:
+              ans[4]=1;
+              break;
+          }
+          break;
+      }
+    }
+    function situ_4(n){
+      switch(choice[1]){
+        case 1:
+          switch(choice[2]){
+            case 1:
+              switch(n){
+                case 1:
+                  ans[0]=3;
+                  break;
+                case 2:
+                  ans[0]=2;
+                  break;
+              }
+              break;
+            case 2:
+              switch(n){
+                case 1:
+                  ans[0]=5;
+                  break;
+                case 2:
+                  ans[0]=2;
+                  break;
+              }
+              break;
+          }
+          break;
+        case 2:
+          switch(choice[2]){
+            case 1:
+              switch(n){
+                case 1:
+                  ans[0]=1;
+                  break;
+                case 2:
+                  ans[0]=4;
+                  break;
+              }
+              break;
+            case 2:
+              switch(n){
+                case 1:
+                  ans[0]=5;
+                  break;
+                case 2:
+                  ans[0]=4;
+                  break;
+              }
+              break;
+          }
+          break;
+      }
+      create_btn();
+      set_size("btn3","50px","100px");
+      set_inner("scene","看到");
+      set_inner("btn1","士林夜市");
+      set_inner("btn2","兒童新樂園");
+      set_inner("btn3","故宮");
+    }
+
+    function situ_5(n){
+      switch(n){
+        case 1:
+          set_inner("scene","士林夜市");
+          set_inner("btn1","打彈珠");
+          set_inner("btn2","套圈圈");
+          ans[5]=3;
+          break;
+        case 2:
+          set_inner("scene","兒童新樂園");
+          set_inner("btn1","碰碰車");
+          set_inner("btn2","旋轉木馬");
+          ans[5]=4;
+          break;
+        case 3:
+          set_inner("scene","故宮");
+          set_inner("btn1","跟著導覽");
+          set_inner("btn2","自己看");
+          ans[5]=5;
+          break;
+      }
+      del_btn();
+    }
+
+    function situ_6(n){
+      switch(choice[5]){
+        case 1:
+          switch(n){
+            case 1:
+              ans[3]=3;
+              break;
+            case 2:
+              ans[3]=4;
+              break;
+          }
+          break;
+        case 2:
+          switch(n){
+            case 1:
+              ans[3]=5;
+              break;
+            case 2:
+              ans[3]=1;
+              break;
+          }
+          break;
+        case 3:
+          switch(n){
+            case 1:
+              ans[3]=2;
+              break;
+            case 2:
+              ans[3]=5;
+              break;
+          }
+          break;
+      }
+      create_btn();
+      set_size("btn3","50px","100px");
+      set_inner("scene","火鍋");
+      set_inner("btn1","貢丸");
+      set_inner("btn2","米血");
+      set_inner("btn3","百頁豆腐");
+    }
+
+    function situ_7(){
+      del_btn();
+      set_inner("scene","想起阿罵的滷味攤");
+      set_inner("btn1","回去");
+      set_inner("btn2","繼續冒險");
+    }
+
+    function situ_8(n){
+      switch(n){
+        case 1:
+          ans[6]=1;
+          break;
+        case 2:
+          ans[6]=5;
+          break;
+      }
+      del_btn();
+      del_btn();
+      result();
+    }
+
+    function result(){
+      var a=0;
+      var result=[0,0,0,0,0,0,0];
+      var result_1=[a==5,		a==2||a==5,	a==2||a==5,	a==3||a==4||a==5,	a==3||a==5,		a==3||a==4,		a==5];
+      var result_2=[a==2,		a==5,		a==5,		a==3||a==4,		a==3,			a==3,			a==1];
+      var result_3=[a==3||a==2,		a==3,		a==5,		a==2||a==3||a==4,	a==4,			a==3||a==4||a==5,	a==5];
+      var result_4=[a==4||a==5,		a==4||a==5,	a==2||a==5,	a==5,			a==3||a==5,		a==4,			a==5];
+      var result_5=[a==5,		a==5,		a==5,		a==1||a==3,		a==5,			a==3||a==4,		a==5];
+      var result_6=[a==3||a==5,		a==3||a==5,	a==5,		a==2,			a==4||a==5,		a==5,			a==1];
+      var result_7=[a==2||a==4||a==5,	a==4||a==5,	a==2||a==5,	a==3||a==4,		a==1||a==3||a==5,	a==3,			a==5];
+      var result_s=[result_1,result_2,result_3,result_4,result_5,result_6,result_7];
+      var result_n=["導演","場務","燈光音效","技術指導","服裝造型","攝影","特技演員"];
+      var result_str=result_n[0];
+      var i=0;
+      var j=0;
+      var i_max=0;
+      for(i=0; i<7; i++){
+        for(j=0; j<7; j++){
+          a=Number(ans[j]);
+          result_1=[a==5,		a==2||a==5,	a==2||a==5,	a==3||a==4||a==5,	a==3||a==5,		a==3||a==4,		a==5];
+          result_2=[a==2,		a==5,		a==5,		a==3||a==4,		a==3,			a==3,			a==1];
+          result_3=[a==3||a==2,		a==3,		a==5,		a==2||a==3||a==4,	a==4,			a==3||a==4||a==5,	a==5];
+          result_4=[a==4||a==5,		a==4||a==5,	a==2||a==5,	a==5,			a==3||a==5,		a==4,			a==5];
+          result_5=[a==5,		a==5,		a==5,		a==1||a==3,		a==5,			a==3||a==4,		a==5];
+          result_6=[a==3||a==5,		a==3||a==5,	a==5,		a==2,			a==4||a==5,		a==5,			a==1];
+          result_7=[a==2||a==4||a==5,	a==4||a==5,	a==2||a==5,	a==3||a==4,		a==1||a==3||a==5,	a==3,			a==5];
+          result_s=[result_1,result_2,result_3,result_4,result_5,result_6,result_7];
+          result_n=["導演","場務","燈光音效","技術指導","服裝造型","攝影","特技演員"];
+          if(result_s[i][j]){result[i]++;}
+        }
+        if(result[i]>result[i_max]){
+          result_str=result_n[i];
+          i_max=i;
+        }
+        else if(i>0 && result[i]==result[i_max] && ans[i]>ans[i_max]){
+          result_str=result_n[i];
+          i_max=i;
+        }
+      }
+    set_inner("scene",result_str);
+    //set_inner("btn_num","result="+result);
+    //set_inner("btn","result_s="+result_s);
+    }
+
+    function create_btn(){
+      counter_btn++;
+      var btn=document.createElement("button");
+      btn.setAttribute("type","button");
+      btn.setAttribute("id","btn"+counter_btn);
+      btn.setAttribute("onclick","btn_click("+counter_btn+")");
+      document.body.appendChild(btn);
+      //set_inner("btn","counter_btn="+counter_btn);
+    }
+
+    function del_btn(){
+      counter_btn--;
+      var btn=document.getElementsByTagName("button");
+      document.body.removeChild(btn[counter_btn]);
+      //set_inner("btn","counter_btn="+counter_btn);
+    }
+
+    function set_size(i,h,w){
+      document.getElementById(i).style.height=h;
+      document.getElementById(i).style.width=w;
+    }
+
+    function set_inner(id,i){
+      document.getElementById(id).innerHTML=i;
+    }
+
   </script>
+
   <style>
     button
     {
-      height:100px;
-      width:200px;
+      height:200px;
+      width:400px;
     }
   </style>
+
 </head>
 <body>
-  <p>阿嬤的滷味攤</p>
-  <button type="button" id="btn1" disabled="disabled"></button>
-  <button type="button" id="btn2" disabled="disabled"></button>
+
+  <p id="scene">阿罵的滷味攤</p>
+  <!--<p id="step">step=0</p>
+  <p id="btn_num">btn_num=0</p>
+  <p id="btn">count_btn=0</p>
+  <p id="choice">choice=0</p>
+  <p id="ans">ans=0</p>-->
+
+  <button type="button" id="btn1" onclick="btn_click(1)">
+  </button>
+
+
 </body>
 </html>
