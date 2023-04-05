@@ -35,28 +35,37 @@
 
     function situ_0(){
       create_btn();
-      set_size("btn1","50px","100px");
-      set_size("btn2","50px","100px");
-      set_inner("scene","貢丸滾出來");
-      set_inner("btn1","滾向小巷");
-      set_inner("btn2","滾向大路");
+      document.body.style.backgroundImage = "url('src/1.png')";
+      set_size("btn1","10vh","20vh");
+      set_size("btn2","10vh","20vh");
+      set_posi("btn1","56vh","calc(50vw - 10vh)");
+      set_posi("btn2","75vh","calc(50vw - 10vh)");
+      //set_inner("scene","貢丸滾出來");
+      //set_inner("btn1","滾向小巷");
+      //set_inner("btn2","滾向大路");
     }
 
     function situ_1(n){
       switch(n){
         case 1:
-          set_inner("scene","小巷");
-          set_inner("btn1","被狗叼走");
-          set_inner("btn2","滾進水溝");
+          document.body.style.backgroundImage = "url('src/2-1.png')";
+          //set_inner("scene","小巷");
+          //set_inner("btn1","被狗叼走");
+          //set_inner("btn2","滾進水溝");
           ans[2]=5;
           break;
         case 2:
-          set_inner("scene","大路");
-          set_inner("btn1","跟隨人群");
-          set_inner("btn2","到處冒險");
+          document.body.style.backgroundImage = "url('src/2-2.png')";
+          //set_inner("scene","大路");
+          //set_inner("btn1","跟隨人群");
+          //set_inner("btn2","到處冒險");
           ans[2]=2;
           break;
       }
+      set_size("btn1","30vh","22vh");
+      set_size("btn2","30vh","22vh");
+      set_posi("btn1","25vh","calc(50vw - 11vh)");
+      set_posi("btn2","60vh","calc(50vw - 11vh)");
     }
 
     function situ_2(n){
@@ -73,33 +82,49 @@
     function situ_2_1(n){
       switch(n){
         case 1:
-          set_inner("scene","狗是");
-          set_inner("btn1","流浪狗");
-          set_inner("btn2","有主人");
+          document.body.style.backgroundImage = "url('src/3-1.png')";
+          //set_inner("scene","狗是");
+          //set_inner("btn1","流浪狗");
+          //set_inner("btn2","有主人");
           ans[1]=3;
           break;
         case 2:
-          set_inner("scene","水溝");
-          set_inner("btn1","沿著水流");
-          set_inner("btn2","看著水流");
+          document.body.style.backgroundImage = "url('src/3-2.png')";
+          //set_inner("scene","水溝");
+          //set_inner("btn1","沿著水流");
+          //set_inner("btn2","看著水流");
           ans[1]=5;
           break;
       }
+      set_size("btn1","9vh","20vh");
+      set_size("btn2","9vh","20vh");
+      set_posi("btn1","60vh","calc(50vw - 10vh)");
+      set_posi("btn2","72vh","calc(50vw - 10vh)");
     }
 
     function situ_2_2(n){
       switch(n){
         case 1:
-          set_inner("scene","人群");
-          set_inner("btn1","光鮮亮麗");
-          set_inner("btn2","平穩實際");
+          document.body.style.backgroundImage = "url('src/3-3.png')";
+          //set_inner("scene","人群");
+          //set_inner("btn1","光鮮亮麗");
+          //set_inner("btn2","平穩實際");
           ans[1]=2;
+          set_size("btn1","30vh","22vh");
+          set_size("btn2","30vh","22vh");
+          set_posi("btn1","25vh","calc(50vw - 11vh)");
+          set_posi("btn2","60vh","calc(50vw - 11vh)");
           break;
         case 2:
-          set_inner("scene","冒險");
-          set_inner("btn1","穿越馬路");
-          set_inner("btn2","等紅燈");
+          document.body.style.backgroundImage = "url('src/3-4.png')";
+          //set_inner("scene","冒險");
+          //set_inner("btn1","穿越馬路");
+          //set_inner("btn2","等紅燈");
           ans[1]=4;
+          set_size("btn1","9vh","20vh");
+          set_size("btn2","9vh","20vh");
+          set_posi("btn1","60vh","calc(50vw - 10vh)");
+          set_posi("btn2","72vh","calc(50vw - 10vh)");
           break;
       }
     }
@@ -117,22 +142,25 @@
     function situ_3_1(n){
       switch(choice[2]){
         case 1:
-          set_inner("scene","狗的主人");
-          set_inner("btn1","年輕");
-          set_inner("btn2","老");
+          //set_inner("scene","狗的主人");
+          //set_inner("btn1","年輕");
+          //set_inner("btn2","老");
           switch(n){
             case 1:
+              document.body.style.backgroundImage = "url('src/4-1.png')";
               ans[4]=4;
               break;
             case 2:
+              document.body.style.backgroundImage = "url('src/4-2.png')";
               ans[4]=2;
               break;
           }
           break;
         case 2:
-          set_inner("scene","水流");
-          set_inner("btn1","急");
-          set_inner("btn2","緩");
+          document.body.style.backgroundImage = "url('src/4-4.png')";
+          //set_inner("scene","水流");
+          //set_inner("btn1","急");
+          //set_inner("btn2","緩");
           switch(n){
             case 1:
               ans[4]=5;
@@ -143,27 +171,38 @@
           }
           break;
       }
+      set_size("btn1","30vh","22vh");
+      set_size("btn2","30vh","22vh");
+      set_posi("btn1","25vh","calc(50vw - 11vh)");
+      set_posi("btn2","60vh","calc(50vw - 11vh)");
     }
 
     function situ_3_2(n){
       switch(choice[2]){
         case 1:
-          set_inner("scene","他們");
-          set_inner("btn1","和你一樣");
-          set_inner("btn2","不一樣");
+          //set_inner("scene","他們");
+          //set_inner("btn1","和你一樣");
+          //set_inner("btn2","不一樣");
           switch(n){
             case 1:
+              document.body.style.backgroundImage = "url('src/4-5.png')";
               ans[4]=3;
               break;
             case 2:
+              document.body.style.backgroundImage = "url('src/4-6.png')";
               ans[4]=2;
               break;
           }
+          set_size("btn1","9vh","20vh");
+          set_size("btn2","9vh","20vh");
+          set_posi("btn1","58vh","calc(50vw - 10vh)");
+          set_posi("btn2","78vh","calc(50vw - 10vh)");
           break;
         case 2:
-          set_inner("scene","走向");
-          set_inner("btn1","圓環");
-          set_inner("btn2","岔路");
+          document.body.style.backgroundImage = "url('src/4-7.png')";
+          //set_inner("scene","走向");
+          //set_inner("btn1","圓環");
+          //set_inner("btn2","岔路");
           switch(n){
             case 1:
               ans[4]=5;
@@ -172,6 +211,10 @@
               ans[4]=1;
               break;
           }
+          set_size("btn1","30vh","22vh");
+          set_size("btn2","30vh","22vh");
+          set_posi("btn1","25vh","calc(50vw - 11vh)");
+          set_posi("btn2","60vh","calc(50vw - 11vh)");
           break;
       }
     }
@@ -227,35 +270,48 @@
           break;
       }
       create_btn();
-      set_size("btn3","50px","100px");
-      set_inner("scene","看到");
-      set_inner("btn1","士林夜市");
-      set_inner("btn2","兒童新樂園");
-      set_inner("btn3","故宮");
+      set_size("btn1","9vh","20vh");
+      set_size("btn2","9vh","20vh");
+      set_size("btn3","9vh","20vh");
+      set_posi("btn1","35vh","calc(50vw - 10vh)");
+      set_posi("btn2","51vh","calc(50vw - 10vh)");
+      set_posi("btn3","69vh","calc(50vw - 10vh)");
+      document.body.style.backgroundImage = "url('src/5-1.png')";
+      //set_inner("scene","看到");
+      //set_inner("btn1","士林夜市");
+      //set_inner("btn2","兒童新樂園");
+      //set_inner("btn3","故宮");
     }
 
     function situ_5(n){
       switch(n){
         case 1:
-          set_inner("scene","士林夜市");
-          set_inner("btn1","打彈珠");
-          set_inner("btn2","套圈圈");
+          document.body.style.backgroundImage = "url('src/6-1.png')";
+          //set_inner("scene","士林夜市");
+          //set_inner("btn1","打彈珠");
+          //set_inner("btn2","套圈圈");
           ans[5]=3;
           break;
         case 2:
-          set_inner("scene","兒童新樂園");
-          set_inner("btn1","碰碰車");
-          set_inner("btn2","旋轉木馬");
+          document.body.style.backgroundImage = "url('src/6-2.png')";
+          //set_inner("scene","兒童新樂園");
+          //set_inner("btn1","碰碰車");
+          //set_inner("btn2","旋轉木馬");
           ans[5]=4;
           break;
         case 3:
-          set_inner("scene","故宮");
-          set_inner("btn1","跟著導覽");
-          set_inner("btn2","自己看");
+          document.body.style.backgroundImage = "url('src/6-3.png')";
+          //set_inner("scene","故宮");
+          //set_inner("btn1","跟著導覽");
+          //set_inner("btn2","自己看");
           ans[5]=5;
           break;
       }
       del_btn();
+      set_size("btn1","30vh","22vh");
+      set_size("btn2","30vh","22vh");
+      set_posi("btn1","25vh","calc(50vw - 11vh)");
+      set_posi("btn2","60vh","calc(50vw - 11vh)");
     }
 
     function situ_6(n){
@@ -292,18 +348,29 @@
           break;
       }
       create_btn();
-      set_size("btn3","50px","100px");
-      set_inner("scene","火鍋");
-      set_inner("btn1","貢丸");
-      set_inner("btn2","米血");
-      set_inner("btn3","百頁豆腐");
+      set_size("btn1","10vh","25vh");
+      set_size("btn2","10vh","25vh");
+      set_size("btn3","10vh","25vh");
+      set_posi("btn1","33vh","calc(47vw - 10vh)");
+      set_posi("btn2","54vh","calc(47vw - 10vh)");
+      set_posi("btn3","76vh","calc(47vw - 10vh)");
+      document.body.style.backgroundImage = "url('src/7-1.png')";
+      //set_inner("scene","火鍋");
+      //set_inner("btn1","貢丸");
+      //set_inner("btn2","米血");
+      //set_inner("btn3","百頁豆腐");
     }
 
     function situ_7(){
       del_btn();
-      set_inner("scene","想起阿罵的滷味攤");
-      set_inner("btn1","回去");
-      set_inner("btn2","繼續冒險");
+      set_size("btn1","9vh","20vh");
+      set_size("btn2","9vh","20vh");
+      set_posi("btn1","60vh","calc(50vw - 10vh)");
+      set_posi("btn2","72vh","calc(50vw - 10vh)");
+      document.body.style.backgroundImage = "url('src/8-1.png')";
+      //set_inner("scene","想起阿罵的滷味攤");
+      //set_inner("btn1","回去");
+      //set_inner("btn2","繼續冒險");
     }
 
     function situ_8(n){
@@ -347,7 +414,7 @@
           result_6=[a==3||a==5,		a==3||a==5,	a==5,		a==2,			a==4||a==5,		a==5,			a==1];
           result_7=[a==2||a==4||a==5,	a==4||a==5,	a==2||a==5,	a==3||a==4,		a==1||a==3||a==5,	a==3,			a==5];
           result_s=[result_1,result_2,result_3,result_4,result_5,result_6,result_7];
-          result_n=["導演","場務","燈光音效","技術指導","服裝造型","攝影","特技演員"];
+          result_n=["導演.png","場務.png","場控.png","舞監.png","服化.png","攝影.png","特技.png"];
           if(result_s[i][j]){result[i]++;}
         }
         if(result[i]>result[i_max]){
@@ -359,7 +426,8 @@
           i_max=i;
         }
       }
-    set_inner("scene",result_str);
+    document.body.style.backgroundImage = "url('src/"+result_str+"')";
+    //set_inner("scene",result_str);
     //set_inner("btn_num","result="+result);
     //set_inner("btn","result_s="+result_s);
     }
@@ -386,6 +454,11 @@
       document.getElementById(i).style.width=w;
     }
 
+    function set_posi(i,t,l){
+      document.getElementById(i).style.top=t;
+      document.getElementById(i).style.left=l;
+    }
+
     function set_inner(id,i){
       document.getElementById(id).innerHTML=i;
     }
@@ -393,18 +466,36 @@
   </script>
 
   <style>
+    body{
+      height:100vh;
+      width:100vw;
+      margin:0;
+      overflow:auto;
+      background-color:"white";
+      background-image: url("src/0.png");
+      background-size:contain;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-attachment:fixed;
+    }
     button
     {
-      height:200px;
-      width:400px;
+      cursor: pointer; 
+      background-color:RGBA(0,0,0,0.2);
+      border-style:none;
+      height:25vh;
+      width:50vh;
+      position: absolute;
+      left:calc(50vw - 25vh);
+      top:55vh;
     }
   </style>
 
 </head>
 <body>
 
-  <p id="scene">阿罵的滷味攤</p>
-  <!--<p id="step">step=0</p>
+  <!--<p id="scene">阿罵的滷味攤</p>
+  <p id="step">step=0</p>
   <p id="btn_num">btn_num=0</p>
   <p id="btn">count_btn=0</p>
   <p id="choice">choice=0</p>
@@ -412,7 +503,6 @@
 
   <button type="button" id="btn1" onclick="btn_click(1)">
   </button>
-
 
 </body>
 </html>
