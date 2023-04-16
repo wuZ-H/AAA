@@ -496,10 +496,9 @@
           create_qrcode();
           try{del_form();}
           catch(e){}
+          if(counter_btn>1){del_btn();}
           set_size("btn1","10.5vh","10.5vh");
-          set_size("btn2","10.5vh","10.5vh");
-          set_posi("btn1","82.9vh","calc(50vw - 15vh)");
-          set_posi("btn2","82.9vh","calc(50vw + 4.4vh)");
+          set_posi("btn1","82.9vh","calc(50vw - 5vh)");
           break;
         case 2:
           step--;
@@ -512,6 +511,7 @@
         case 1:
           document.body.style.backgroundImage = "url('src/掃描.png')";
           del_qrcode();
+          set_posi("btn1","85.8vh","calc(50vw - 5vh)");
           step-=2;
           break;
         case 2:
