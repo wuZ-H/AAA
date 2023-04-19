@@ -411,7 +411,9 @@
       set_size("btn1","8vh","22vh");
       set_posi("btn1","88vh","calc(50vw - 11vh)");
       result();
-      //create_3d();
+      create_3d(0);
+      set_size("threed","27vh","27vh");
+      set_posi("threed","18.6vh","calc(50vw - 19vh)");
     }
 
     function situ_9(n){
@@ -434,11 +436,13 @@
       set_size("input1","3.5vh","3.5vh");
       set_size("input2","3.5vh","3.5vh");
       set_size("input3","3.5vh","3.5vh");
+      set_size("threed","39.5vh","39.5vh");
       set_posi("btn1","83.1vh","calc(50vw + 4.1vh)");
       set_posi("btn2","76.5vh","calc(50vw + 5.3vh)");
       set_posi("input1","17.1vh","calc(50vw + 11vh)");
       set_posi("input2","26.7vh","calc(50vw + 11vh)");
       set_posi("input3","36.4vh","calc(50vw + 11vh)");
+      set_posi("threed","45vh","calc(50vw - 20.2vh)");
       document.getElementById("input1").value=c_head;
       document.getElementById("input2").value=c_body;
       document.getElementById("input3").value=c_leg;
@@ -464,11 +468,13 @@
       set_size("input1","3.5vh","3.5vh");
       set_size("input2","3.5vh","3.5vh");
       set_size("input3","6.1vh","29.2vh");
+      set_size("threed","39.5vh","39.5vh");
       set_posi("btn1","83.1vh","calc(50vw - 15vh)");
       set_posi("btn2","76.5vh","calc(50vw + 5.3vh)");
       set_posi("input1","17.5vh","calc(50vw + 11.3vh)");
       set_posi("input2","25.5vh","calc(50vw + 11.3vh)");
       set_posi("input3","33.5vh","calc(50vw - 14.8vh)");
+      set_posi("threed","45vh","calc(50vw - 20.2vh)");
       document.getElementById("input1").value=c_text;
       document.getElementById("input2").value=c_textbg;
       document.getElementById("input3").value=info_text;
@@ -494,7 +500,10 @@
         case 1:
           document.body.style.backgroundImage = "url('src/貢丸QRCODE.png')";
           create_qrcode();
-          try{del_form();}
+          try{
+          del_form();
+          del_3d();
+          }
           catch(e){}
           if(counter_btn>1){del_btn();}
           set_size("btn1","10.5vh","10.5vh");
