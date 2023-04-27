@@ -1,8 +1,17 @@
 <!DOCTYPE html>
+<html lang="zh_TW">
 <html>
 <head>
   <title>AAA</title>
+  <meta charset="UTF-8">
+  <meta name="subject" content="AAA北科互動一111-2專題第七組">
+  <meta name="description" content="AAA北科互動一111-2專題第七組線上互動網頁">
 
+  <meta property="og:site_name" content="AAA">
+  <meta property="og:title" content="北科互動一111-2專題第七組線上互動網頁">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wuz-h.github.io/AAA/">
+  <meta property="og:image" content="https://wuz-h.github.io/AAA/src/0.JPG">
   <style>
     body{
       height:100vh;
@@ -18,7 +27,7 @@
     }
     button{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border-style:none;
       outline: 0;
       height:25vh;
@@ -82,51 +91,14 @@
 </head>
 <body>
 
-  <!--<p id="scene">阿罵的滷味攤</p>
-  <p id="step">step=0</p>
-  <p id="btn_num">btn_num=0</p>
-  <p id="btn">count_btn=0</p>
-  <p id="choice">choice=0</p>
-  <p id="ans">ans=0</p>-->
+  <!--<p id="scene">阿罵的滷味攤</p>-->
 
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-  <script>
-    function create_3d(n){
-      var canvas = document.createElement("canvas");
-      canvas.setAttribute("id","threed");
-      document.body.appendChild(canvas);
-      var engine =new BABYLON.Engine(canvas,true);
-      var scene= new BABYLON.Scene(engine);
-      var camera = new BABYLON.ArcRotateCamera("camera1",0,0,8,new BABYLON.Vector3(0, 0, 0),scene);
-      camera.setPosition(new BABYLON.Vector3(0,0,-8));
-      camera.attachControl(canvas, true);
-      camera.inputs.removeByType("ArcRotateCameraMouseWheelInput")
-      const b=camera.beta;
-      Object.defineProperty(camera,"beta",{
-        get:function(){return b;},
-        set:function(){}
-      });
-      scene.autoClear = false;
-      scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
-      scene.activeCamera.panningSensibility = 0;
-      var light = new BABYLON.HemisphericLight("light",new BABYLON.Vector3(0, 1, 0), scene);
-      light.intensity = 0.7;
-      BABYLON.SceneLoader.ImportMesh("","src/3D/Director.glb","",scene,function(newMeshes){
-        newMeshes[0].scaling = new BABYLON.Vector3(0.8,1,1);
-        newMeshes[0].position.y=-2;
-      });
-      engine.runRenderLoop(function () {scene.render();});
-    }
-    function del_3d(){
-      var canvas=document.getElementById("threed");
-      document.body.removeChild(canvas);
-    }
-  </script>
-
+  <script src="src/scripts/threed.js" type="text/javascript" ></script>
   <script src="src/QR/jquery.min.js" type="text/javascript"></script>
   <script src="src/QR/qrcode.js" type="text/javascript" ></script>
-  <script defer src="src/script.js" type="text/javascript" ></script>
+  <script defer src="src/scripts/script.js" type="text/javascript" ></script>
 
 </body>
 </html>
