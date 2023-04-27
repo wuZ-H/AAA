@@ -11,7 +11,8 @@
     var c_textbg="#000000";
     var info_text="";
     var QRinfo=[0,0,0,0,0,0,0,0,0,0];
-    let _vh = window.innerHeight * 0.01;
+    var _vh = window.innerHeight * 0.01;
+    var _vw = window.innerWidth * 0.01;
     
     function btn_click(btn_num) {
       choose(btn_num);
@@ -58,10 +59,10 @@
     function situ_0(){
       create_btn();
       document.body.style.backgroundImage = "url('src/1.png')";
-      set_size("btn1","10vh","20vh");
-      set_size("btn2","10vh","20vh");
-      set_posi("btn1","56vh","calc(50vw - 10vh)");
-      set_posi("btn2","75vh","calc(50vw - 10vh)");
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","56 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","75 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
       //set_inner("scene","貢丸滾出來");
       //set_inner("btn1","滾向小巷");
       //set_inner("btn2","滾向大路");
@@ -84,10 +85,10 @@
           ans[2]=2;
           break;
       }
-      set_size("btn1","30vh","22vh");
-      set_size("btn2","30vh","22vh");
-      set_posi("btn1","25vh","calc(50vw - 11vh)");
-      set_posi("btn2","60vh","calc(50vw - 11vh)");
+      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
+      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
+      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
     }
 
     function situ_2(n){
@@ -118,10 +119,10 @@
           ans[1]=5;
           break;
       }
-      set_size("btn1","9vh","20vh");
-      set_size("btn2","9vh","20vh");
-      set_posi("btn1","60vh","calc(50vw - 10vh)");
-      set_posi("btn2","72vh","calc(50vw - 10vh)");
+      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
     }
 
     function situ_2_2(n){
@@ -132,10 +133,10 @@
           //set_inner("btn1","光鮮亮麗");
           //set_inner("btn2","平穩實際");
           ans[1]=2;
-          set_size("btn1","30vh","22vh");
-          set_size("btn2","30vh","22vh");
-          set_posi("btn1","25vh","calc(50vw - 11vh)");
-          set_posi("btn2","60vh","calc(50vw - 11vh)");
+          set_size("btn1","30 * var(--vh)","22 * var(--vh)");
+          set_size("btn2","30 * var(--vh)","22 * var(--vh)");
+          set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+          set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
           break;
         case 2:
           document.body.style.backgroundImage = "url('src/3-4.png')";
@@ -143,10 +144,10 @@
           //set_inner("btn1","穿越馬路");
           //set_inner("btn2","等紅燈");
           ans[1]=4;
-          set_size("btn1","9vh","20vh");
-          set_size("btn2","9vh","20vh");
-          set_posi("btn1","60vh","calc(50vw - 10vh)");
-          set_posi("btn2","72vh","calc(50vw - 10vh)");
+          set_size("btn1","9 * var(--vh)","20 * var(--vh)");
+          set_size("btn2","9 * var(--vh)","20 * var(--vh)");
+          set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+          set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
           break;
       }
     }
@@ -193,10 +194,10 @@
           }
           break;
       }
-      set_size("btn1","30vh","22vh");
-      set_size("btn2","30vh","22vh");
-      set_posi("btn1","25vh","calc(50vw - 11vh)");
-      set_posi("btn2","60vh","calc(50vw - 11vh)");
+      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
+      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
+      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
     }
 
     function situ_3_2(n){
@@ -215,10 +216,10 @@
               ans[4]=2;
               break;
           }
-          set_size("btn1","9vh","20vh");
-          set_size("btn2","9vh","20vh");
-          set_posi("btn1","58vh","calc(50vw - 10vh)");
-          set_posi("btn2","78vh","calc(50vw - 10vh)");
+          set_size("btn1","9 * var(--vh)","20 * var(--vh)");
+          set_size("btn2","9 * var(--vh)","20 * var(--vh)");
+          set_posi("btn1","58 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+          set_posi("btn2","78 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
           break;
         case 2:
           document.body.style.backgroundImage = "url('src/4-7.png')";
@@ -233,10 +234,10 @@
               ans[4]=1;
               break;
           }
-          set_size("btn1","30vh","22vh");
-          set_size("btn2","30vh","22vh");
-          set_posi("btn1","25vh","calc(50vw - 11vh)");
-          set_posi("btn2","60vh","calc(50vw - 11vh)");
+          set_size("btn1","30 * var(--vh)","22 * var(--vh)");
+          set_size("btn2","30 * var(--vh)","22 * var(--vh)");
+          set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+          set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
           break;
       }
     }
@@ -292,12 +293,12 @@
           break;
       }
       create_btn();
-      set_size("btn1","9vh","20vh");
-      set_size("btn2","9vh","20vh");
-      set_size("btn3","9vh","20vh");
-      set_posi("btn1","35vh","calc(50vw - 10vh)");
-      set_posi("btn2","51vh","calc(50vw - 10vh)");
-      set_posi("btn3","69vh","calc(50vw - 10vh)");
+      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
+      set_size("btn3","9 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","51 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn3","69 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
       document.body.style.backgroundImage = "url('src/5-1.png')";
       //set_inner("scene","看到");
       //set_inner("btn1","士林夜市");
@@ -330,10 +331,10 @@
           break;
       }
       del_btn();
-      set_size("btn1","30vh","22vh");
-      set_size("btn2","30vh","22vh");
-      set_posi("btn1","25vh","calc(50vw - 11vh)");
-      set_posi("btn2","60vh","calc(50vw - 11vh)");
+      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
+      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
+      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
     }
 
     function situ_6(n){
@@ -370,12 +371,12 @@
           break;
       }
       create_btn();
-      set_size("btn1","10vh","25vh");
-      set_size("btn2","10vh","25vh");
-      set_size("btn3","10vh","25vh");
-      set_posi("btn1","33vh","calc(47vw - 10vh)");
-      set_posi("btn2","54vh","calc(47vw - 10vh)");
-      set_posi("btn3","76vh","calc(47vw - 10vh)");
+      set_size("btn1","10 * var(--vh)","25 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","25 * var(--vh)");
+      set_size("btn3","10 * var(--vh)","25 * var(--vh)");
+      set_posi("btn1","33 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","54 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn3","76 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
       document.body.style.backgroundImage = "url('src/7-1.png')";
       //set_inner("scene","火鍋");
       //set_inner("btn1","貢丸");
@@ -385,10 +386,10 @@
 
     function situ_7(){
       del_btn();
-      set_size("btn1","9vh","20vh");
-      set_size("btn2","9vh","20vh");
-      set_posi("btn1","60vh","calc(50vw - 10vh)");
-      set_posi("btn2","72vh","calc(50vw - 10vh)");
+      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
       document.body.style.backgroundImage = "url('src/8-1.png')";
       //set_inner("scene","想起阿罵的滷味攤");
       //set_inner("btn1","回去");
@@ -405,12 +406,12 @@
           break;
       }
       del_btn();
-      set_size("btn1","8vh","22vh");
-      set_posi("btn1","88vh","calc(50vw - 11vh)");
+      set_size("btn1","8 * var(--vh)","22 * var(--vh)");
+      set_posi("btn1","88 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       result();
       create_3d(0);
-      set_size("threed","27vh","27vh");
-      set_posi("threed","18.6vh","calc(50vw - 19vh)");
+      set_size("threed","27 * var(--vh)","27 * var(--vh)");
+      set_posi("threed","18.6 * var(--vh)","calc((50 * var(--vw)) - (19 * var(--vh)))");
     }
 
     function situ_9(n){
@@ -428,18 +429,18 @@
         del_input();
         create_input("color");
       }
-      set_size("btn1","10.5vh","10.5vh");
-      set_size("btn2","3.8vh","10.2vh");
-      set_size("input1","3.5vh","3.5vh");
-      set_size("input2","3.5vh","3.5vh");
-      set_size("input3","3.5vh","3.5vh");
-      set_size("threed","39.5vh","39.5vh");
-      set_posi("btn1","83.1vh","calc(50vw + 4.1vh)");
-      set_posi("btn2","76.5vh","calc(50vw + 5.3vh)");
-      set_posi("input1","17.1vh","calc(50vw + 11vh)");
-      set_posi("input2","26.7vh","calc(50vw + 11vh)");
-      set_posi("input3","36.4vh","calc(50vw + 11vh)");
-      set_posi("threed","45vh","calc(50vw - 20.2vh)");
+      set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
+      set_size("btn2","3.8 * var(--vh)","10.2 * var(--vh)");
+      set_size("input1","3.5 * var(--vh)","3.5 * var(--vh)");
+      set_size("input2","3.5 * var(--vh)","3.5 * var(--vh)");
+      set_size("input3","3.5 * var(--vh)","3.5 * var(--vh)");
+      set_size("threed","39.5 * var(--vh)","39.5 * var(--vh)");
+      set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
+      set_posi("btn2","76.5 * var(--vh)","calc((50 * var(--vw)) + (5.3 * var(--vh)))");
+      set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
+      set_posi("input2","26.7 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
+      set_posi("input3","36.4 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
+      set_posi("threed","45 * var(--vh)","calc((50 * var(--vw)) - (20.2 * var(--vh)))");
       document.getElementById("input1").value=c_head;
       document.getElementById("input2").value=c_body;
       document.getElementById("input3").value=c_leg;
@@ -460,18 +461,18 @@
       document.body.style.backgroundImage = "url('src/打字.png')";
       del_input();
       create_input("text");
-      set_size("btn1","10.5vh","10.5vh");
-      set_size("btn2","3.8vh","10.2vh");
-      set_size("input1","3.5vh","3.5vh");
-      set_size("input2","3.5vh","3.5vh");
-      set_size("input3","6.1vh","29.2vh");
-      set_size("threed","39.5vh","39.5vh");
-      set_posi("btn1","83.1vh","calc(50vw - 15vh)");
-      set_posi("btn2","76.5vh","calc(50vw + 5.3vh)");
-      set_posi("input1","17.5vh","calc(50vw + 11.3vh)");
-      set_posi("input2","25.5vh","calc(50vw + 11.3vh)");
-      set_posi("input3","33.5vh","calc(50vw - 14.8vh)");
-      set_posi("threed","45vh","calc(50vw - 20.2vh)");
+      set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
+      set_size("btn2","3.8 * var(--vh)","10.2 * var(--vh)");
+      set_size("input1","3.5 * var(--vh)","3.5 * var(--vh)");
+      set_size("input2","3.5 * var(--vh)","3.5 * var(--vh)");
+      set_size("input3","6.1 * var(--vh)","29.2 * var(--vh)");
+      set_size("threed","39.5 * var(--vh)","39.5 * var(--vh)");
+      set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) - (15 * var(--vh)))");
+      set_posi("btn2","76.5 * var(--vh)","calc((50 * var(--vw)) + (5.3 * var(--vh)))");
+      set_posi("input1","17.5 * var(--vh)","calc((50 * var(--vw)) + (11.3 * var(--vh)))");
+      set_posi("input2","25.5 * var(--vh)","calc((50 * var(--vw)) + (11.3 * var(--vh)))");
+      set_posi("input3","33.5 * var(--vh)","calc((50 * var(--vw)) - (14.8 * var(--vh)))");
+      set_posi("threed","45 * var(--vh)","calc((50 * var(--vw)) - (20.2 * var(--vh)))");
       document.getElementById("input1").value=c_text;
       document.getElementById("input2").value=c_textbg;
       document.getElementById("input3").value=info_text;
@@ -503,8 +504,8 @@
           }
           catch(e){}
           if(counter_btn>1){del_btn();}
-          set_size("btn1","10.5vh","10.5vh");
-          set_posi("btn1","82.9vh","calc(50vw - 5vh)");
+          set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
+          set_posi("btn1","82.9 * var(--vh)","calc((50 * var(--vw)) - (5 * var(--vh)))");
           break;
         case 2:
           step--;
@@ -517,7 +518,7 @@
         case 1:
           document.body.style.backgroundImage = "url('src/掃描.png')";
           del_qrcode();
-          set_posi("btn1","85.8vh","calc(50vw - 5vh)");
+          set_posi("btn1","85.8 * var(--vh)","calc((50 * var(--vw)) - (5 * var(--vh)))");
           step-=2;
           break;
         case 2:
@@ -684,13 +685,13 @@
     }
 
     function set_size(i,h,w){
-      document.getElementById(i).style.height=h;
-      document.getElementById(i).style.width=w;
+      document.getElementById(i).style.height="calc("+h+")";
+      document.getElementById(i).style.width="calc("+w+")";
     }
 
     function set_posi(i,t,l){
-      document.getElementById(i).style.top=t;
-      document.getElementById(i).style.left=l;
+      document.getElementById(i).style.top="calc("+t+")";
+      document.getElementById(i).style.left="calc("+l+")";
     }
 
     function set_inner(id,i){
@@ -709,8 +710,24 @@
       return RGB;
     }
 
+    function window_load(){
+      _vh = window.innerHeight * 0.01;
+      _vw = window.innerWidth * 0.01;
+      document.body.style.height=_vh*100;
+      document.body.style.width=_vw*100;
+      document.documentElement.style.setProperty('--vh',_vh+'px');
+      document.documentElement.style.setProperty('--vw',_vw+'px');
+    }
+
     function window_resize(){
+      _vh = window.innerHeight * 0.01;
+      _vw = window.innerWidth * 0.01;
+      document.body.style.height=_vh*100;
+      document.body.style.width=_vw*100;
+      document.documentElement.style.setProperty('--vh',_vh+'px');
+      document.documentElement.style.setProperty('--vw',_vw+'px');
     }
 
     window.addEventListener('resize',window_resize);
     create_btn();
+    window.addEventListener('load',window_load);
