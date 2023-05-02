@@ -559,15 +559,17 @@
         }
         if(result[i]>result[i_max]){
           result_str=result_n[i];
+          QRinfo[16]=i;
           i_max=i;
         }
         else if(i>0 && result[i]==result[i_max] && ans[i]>ans[i_max]){
           result_str=result_n[i];
+          QRinfo[16]=i;
           i_max=i;
         }
       }
     document.body.style.backgroundImage = "url('src/"+result_str+".png')";
-    QRinfo[16]=result_str;
+    //QRinfo[16]=result_str;
     //set_inner("scene",result_str);
     //set_inner("btn_num","result="+result);
     //set_inner("btn","result_s="+result_s);
