@@ -11,15 +11,15 @@
   <meta property="og:title" content="北科互動一111-2專題第七組線上互動網頁">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wuz-h.github.io/AAA/">
-  <meta property="og:image" content="https://wuz-h.github.io/AAA/src/0.png">
+  <meta property="og:image" content="https://wuz-h.github.io/AAA/src/img/logo.png">
   <style>
     body{
       height:calc(100 * var(--vh));
       width:calc(100 * var(--vw));
       margin:0;
       overflow:auto;
-      background-color:"white";
-      background-image: url("src/0.png");
+      background-color:#D9D9D9;
+      //background-image: url("src/0.png");
       background-size:contain;
       background-repeat:no-repeat;
       background-position:center center;
@@ -27,15 +27,20 @@
     }
     button{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border-style:none;
       outline: 0;
       height:calc(25 * var(--vh));
       width:calc(50 * var(--vh));
       position: absolute;
       left:calc((50 * var(--vw)) - (25 * var(--vh)));
-      top:calc(55 * var(--vh));
+      top:calc(75 * var(--vh));
       z-index:2;
+      font-size:calc(1.6 * var(--vh));
+      font-family: "微軟正黑體", sans-serif;
+      font-weight: 800;
+      text-align: center;
+      line-height: 2;
     }
     form{ 
       background-color:RGBA(0,0,0,0);
@@ -49,7 +54,7 @@
     }
     input{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border:none;
       border-style:none;
       outline: 0;
@@ -86,12 +91,37 @@
       position: absolute;
       outline: 0;
     }
+    #icon{
+      height:calc(7 * var(--vh));
+      width:calc(7 * var(--vh));
+      position: absolute;
+      left:calc((50 * var(--vw)) - (25 * var(--vh)));
+      top:calc(2 * var(--vh));
+    }
+    div{
+      position: absolute;
+      font-size:calc(1.6 * var(--vh));
+      font-family: "微軟正黑體", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      text-align: center;
+      line-height: 2;
+    }
+    #scene{
+      left:calc((50 * var(--vw)) - (12 * var(--vh)));
+      top:calc(22 * var(--vh));
+    }
   </style>
 
 </head>
 <body>
 
-  <!--<p id="scene">阿罵的滷味攤</p>-->
+  <img id="icon" src="src/img/logo.PNG"></img>
+  <div id="scene">在一個吵雜的夜晚，<br>
+  人們來來去去，讓時間慢下來的，<br>
+  只有路旁推著滷味攤的阿婆，<br>
+  那是一盞，微弱卻溫柔的小橙燈，<br>
+  吸收了世間的喧嘩</div>
 
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
