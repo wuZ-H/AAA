@@ -1,7 +1,8 @@
 
-    var step=0;
+    var step=-3;
     var counter_btn=0;
     var counter_input=0;
+    var counter_img=0;
     var choice=[0];
     var ans=[0,0,0,0,0,0,0];
     var c_head="#000000";
@@ -39,11 +40,18 @@
     function choose(n){
       choice[step]=n;
       switch (step){
+        case -3:situ_m3();break;
+        case -2:situ_m2();break;
+        case -1:situ_m1();break;
         case 0: situ_0();break;
         case 1: situ_1(n);break;
+        case 1.5: situ_1d5();break;
         case 2: situ_2(n);break;
+        case 2.5: situ_2d5();break;
         case 3: situ_3(n);break;
+        case 3.5: situ_3d5();break;
         case 4: situ_4(n);break;
+        case 4.5: situ_4d5();break;
         case 5: situ_5(n);break;
         case 6: situ_6(n);break;
         case 7: situ_7(n);break;
@@ -56,98 +64,200 @@
       step = step + 1;
     }
 
+    function situ_m3(){
+      set_inner("scene","「是貢丸誒欸！」小男孩說道...");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      del_img();
+      create_img("src/img/貢丸.PNG");
+      set_size("img1","40 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+    }
+
+    function situ_m2(){
+      set_inner("scene","「啊～」");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (2 * var(--vh)))");
+      del_img();
+      create_img("src/img/夾貢丸.PNG");
+      set_size("img1","42 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","32 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+    }
+
+    function situ_m1(){
+      set_inner("scene","這時身為貢丸的你會...");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      del_img();
+      create_img("src/img/貢丸飛.PNG");
+      set_size("img1","42 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","32 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+    }
+
     function situ_0(){
       create_btn();
-      document.body.style.backgroundImage = "url('src/1.png')";
+      //document.body.style.backgroundImage = "url('src/1.png')";
       set_size("btn1","10 * var(--vh)","20 * var(--vh)");
       set_size("btn2","10 * var(--vh)","20 * var(--vh)");
-      set_posi("btn1","56 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn2","75 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      //set_inner("scene","貢丸滾出來");
-      //set_inner("btn1","滾向小巷");
-      //set_inner("btn2","滾向大路");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("scene","");
+      set_inner("btn1","滾向小巷");
+      set_inner("btn2","滾向大路");
+      del_img();
     }
 
     function situ_1(n){
       switch(n){
         case 1:
-          document.body.style.backgroundImage = "url('src/2-1.png')";
-          //set_inner("scene","小巷");
-          //set_inner("btn1","被狗叼走");
+          //document.body.style.backgroundImage = "url('src/2-1.png')";
+          set_inner("scene","「這裡是哪裡，好暗啊！」<br>在陰暗的巷子中...");
+          create_img("src/img/小巷.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          //set_inner("btn1","被小狗叼走");
           //set_inner("btn2","滾進水溝");
           ans[2]=5;
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/2-2.png')";
-          //set_inner("scene","大路");
+          //document.body.style.backgroundImage = "url('src/2-2.png')";
+          set_inner("scene","「啊呀，這個世界好大呀！」<br>在這車水馬龍的路上，我該...");
+          create_img("src/img/大路.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           //set_inner("btn1","跟隨人群");
           //set_inner("btn2","到處冒險");
           ans[2]=2;
           break;
       }
-      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
-      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
-      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
-      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_1d5(){
+      create_btn();
+      switch(choice[1]){
+        case 1:
+          set_inner("btn1","被小狗叼走");
+          set_inner("btn2","滾進水溝");
+          break;
+        case 2:
+          set_inner("btn1","跟隨人群");
+          set_inner("btn2","到處冒險");
+          break;
+      }
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_2(n){
       switch(choice[1]){
-        case 1:
+        case 1: 
           situ_2_1(n);
           break;
         case 2:
           situ_2_2(n);
           break;
       }
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_2_1(n){
       switch(n){
         case 1:
-          document.body.style.backgroundImage = "url('src/3-1.png')";
-          //set_inner("scene","狗是");
-          //set_inner("btn1","流浪狗");
-          //set_inner("btn2","有主人");
+          //document.body.style.backgroundImage = "url('src/3-1.png')";
+          set_inner("scene","「這就是人類最好的朋友嗎？」<br>我覺得它是...");
+          create_img("src/img/黑狗.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=3;
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/3-2.png')";
-          //set_inner("scene","水溝");
-          //set_inner("btn1","沿著水流");
-          //set_inner("btn2","看著水流");
+          //document.body.style.backgroundImage = "url('src/3-2.png')";
+          set_inner("scene","「哈囉！你是老鼠嗎？你要跟著我...」");
+          create_img("src/img/勞贖.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=5;
           break;
       }
-      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
-      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
-      set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
     }
 
     function situ_2_2(n){
       switch(n){
         case 1:
-          document.body.style.backgroundImage = "url('src/3-3.png')";
-          //set_inner("scene","人群");
-          //set_inner("btn1","光鮮亮麗");
-          //set_inner("btn2","平穩實際");
+          //document.body.style.backgroundImage = "url('src/3-3.png')";
+          set_inner("scene","「他們來來去去的，不知道要去哪，那我跟著他們好了...」<br>他們是...");
+          create_img("src/img/人群.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=2;
-          set_size("btn1","30 * var(--vh)","22 * var(--vh)");
-          set_size("btn2","30 * var(--vh)","22 * var(--vh)");
-          set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
-          set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/3-4.png')";
-          //set_inner("scene","冒險");
-          //set_inner("btn1","穿越馬路");
-          //set_inner("btn2","等紅燈");
+          //document.body.style.backgroundImage = "url('src/3-4.png')";
+          set_inner("scene","「我想去到對面，但是這些<br>跑得好快有四個輪子的怪物是什麼，我該...」");
+          create_img("src/img/過馬路.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=4;
-          set_size("btn1","9 * var(--vh)","20 * var(--vh)");
-          set_size("btn2","9 * var(--vh)","20 * var(--vh)");
-          set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-          set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+          break;
+      }
+    }
+
+    function situ_2d5(){
+      create_btn();
+      switch(choice[1]){
+        case 1: 
+          situ_2d5_1();
+          break;
+        case 2:
+          situ_2d5_2();
+          break;
+      }
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_2d5_1(){
+      switch(choice[2]){
+        case 1:
+          set_inner("btn1","流浪狗");
+          set_inner("btn2","有主人");
+          break;
+        case 2:
+          set_inner("btn1","沿著水流");
+          set_inner("btn2","看著水流");
+          break;
+      }
+    }
+
+    function situ_2d5_2(){
+      switch(choice[2]){
+        case 1:
+          set_inner("btn1","光鮮亮麗");
+          set_inner("btn2","平穩實際");
+          break;
+        case 2:
+          set_inner("btn1","直接穿越");
+          set_inner("btn2","等待號誌");
           break;
       }
     }
@@ -161,29 +271,36 @@
           situ_3_2(n);
           break;
       }
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
+
     function situ_3_1(n){
       switch(choice[2]){
         case 1:
-          //set_inner("scene","狗的主人");
-          //set_inner("btn1","年輕");
-          //set_inner("btn2","老");
+          create_img("src/img/主人.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
-              document.body.style.backgroundImage = "url('src/4-1.png')";
+              set_inner("scene","「不知道你未來的主人會是怎樣的人呢！」");
               ans[4]=4;
               break;
             case 2:
-              document.body.style.backgroundImage = "url('src/4-2.png')";
+              set_inner("scene","「你的主人會是怎樣的人呢？」");
               ans[4]=2;
               break;
           }
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/4-4.png')";
-          //set_inner("scene","水流");
-          //set_inner("btn1","急");
-          //set_inner("btn2","緩");
+          set_inner("scene","「哇～水流裡好像有星星般，微弱的閃爍著...」<br>水流是…");
+          create_img("src/img/星星.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
               ans[4]=5;
@@ -194,38 +311,29 @@
           }
           break;
       }
-      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
-      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
-      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
-      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
     }
 
     function situ_3_2(n){
       switch(choice[2]){
         case 1:
-          //set_inner("scene","他們");
-          //set_inner("btn1","和你一樣");
-          //set_inner("btn2","不一樣");
+          set_inner("scene","我為什麼會想跟著他們呢...");
+          create_img("src/img/人群.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
-              document.body.style.backgroundImage = "url('src/4-5.png')";
               ans[4]=3;
               break;
             case 2:
-              document.body.style.backgroundImage = "url('src/4-6.png')";
               ans[4]=2;
               break;
           }
-          set_size("btn1","9 * var(--vh)","20 * var(--vh)");
-          set_size("btn2","9 * var(--vh)","20 * var(--vh)");
-          set_posi("btn1","58 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-          set_posi("btn2","78 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/4-7.png')";
-          //set_inner("scene","走向");
-          //set_inner("btn1","圓環");
-          //set_inner("btn2","岔路");
+          set_inner("scene","「這個世界也太熱鬧了吧！咦，我走這裡好了...」");
+          create_img("src/img/大路.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
               ans[4]=5;
@@ -234,18 +342,65 @@
               ans[4]=1;
               break;
           }
-          set_size("btn1","30 * var(--vh)","22 * var(--vh)");
-          set_size("btn2","30 * var(--vh)","22 * var(--vh)");
-          set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
-          set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
           break;
       }
     }
+
+    function situ_3d5(){
+      create_btn();
+      switch(choice[1]){
+        case 1:
+          situ_3d5_1();
+          break;
+        case 2:
+          situ_3d5_2();
+          break;
+      }
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_3d5_1(n){
+      switch(choice[2]){
+        case 1:
+          set_inner("btn1","年輕有幹勁");
+          set_inner("btn2","慈祥的老人");
+          break;
+        case 2:
+          set_inner("btn1","水流湍急");
+          set_inner("btn2","水流緩慢");
+          break;
+      }
+    }
+
+    function situ_3d5_2(n){
+      switch(choice[2]){
+        case 1:
+          set_inner("btn1","他們和你一樣");
+          set_inner("btn2","他們和你不一樣");
+          break;
+        case 2:
+          set_inner("btn1","走圓環");
+          set_inner("btn2","走岔路");
+          break;
+      }
+    }
+
     function situ_4(n){
       switch(choice[1]){
         case 1:
           switch(choice[2]){
             case 1:
+              set_inner("scene","「用狗狗的視角看了這個世界，<br>好奇妙啊，咦，你問我想去哪嗎...」");
+              create_img("src/img/狗刁貢丸.PNG");
+              set_size("img1","40 * var(--vh)","40 * var(--vh)");
+              set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
                 case 1:
                   ans[0]=3;
@@ -256,6 +411,10 @@
               }
               break;
             case 2:
+              set_inner("scene","「第一次看到地底下的世界，<br>謝謝你小老鼠，陪我玩了這麼久，<br>什麼？再帶我去一個地方嗎...」");
+              create_img("src/img/勞贖2.PNG");
+              set_size("img1","40 * var(--vh)","40 * var(--vh)");
+              set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
                 case 1:
                   ans[0]=5;
@@ -270,6 +429,10 @@
         case 2:
           switch(choice[2]){
             case 1:
+              set_inner("scene","「咦，你們到底要去到哪...」");
+              create_img("src/img/人群2.PNG");
+              set_size("img1","40 * var(--vh)","40 * var(--vh)");
+              set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
                 case 1:
                   ans[0]=1;
@@ -280,6 +443,10 @@
               }
               break;
             case 2:
+              set_inner("scene","「終於來到這了，哇～這是...」");
+              create_img("src/img/人群2.PNG");
+              set_size("img1","40 * var(--vh)","40 * var(--vh)");
+              set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
                 case 1:
                   ans[0]=5;
@@ -292,21 +459,35 @@
           }
           break;
       }
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_4d5(){
       create_btn();
-      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
-      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
-      set_size("btn3","9 * var(--vh)","20 * var(--vh)");
+      create_btn();
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn3","10 * var(--vh)","20 * var(--vh)");
       set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn2","51 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn3","69 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      document.body.style.backgroundImage = "url('src/5-1.png')";
-      //set_inner("scene","看到");
-      //set_inner("btn1","士林夜市");
-      //set_inner("btn2","兒童新樂園");
-      //set_inner("btn3","故宮");
+      set_posi("btn2","47.5 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn3","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("btn1","士林夜市");
+      set_inner("btn2","兒童新樂園");
+      set_inner("btn3","故宮");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_5(n){
+      set_inner("btn1","");
+      set_inner("btn2","");
       switch(n){
         case 1:
           document.body.style.backgroundImage = "url('src/6-1.png')";
@@ -686,6 +867,20 @@
       document.getElementById("form1").removeChild(input[counter_input]);
     }
 
+    function create_img(src){
+      counter_img++;
+      var img=document.createElement("img");
+      img.setAttribute("src",src);
+      img.setAttribute("id","img" + counter_img);
+      document.body.appendChild(img);
+    }
+
+    function del_img(){
+      var img=document.getElementsByTagName("img");
+      document.body.removeChild(img[counter_img]);
+      counter_img--;
+    }
+
     function set_size(i,h,w){
       document.getElementById(i).style.height="calc("+h+")";
       document.getElementById(i).style.width="calc("+w+")";
@@ -719,6 +914,11 @@
       document.body.style.width=_vw*100;
       document.documentElement.style.setProperty('--vh',_vh+'px');
       document.documentElement.style.setProperty('--vw',_vw+'px');
+      create_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      create_img("src/img/滷味攤.PNG");
+      set_size("img1","40 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
 
     function window_resize(){
@@ -731,5 +931,4 @@
     }
 
     window.addEventListener('resize',window_resize);
-    create_btn();
     window.addEventListener('load',window_load);
