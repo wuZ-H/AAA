@@ -53,8 +53,11 @@
         case 4: situ_4(n);break;
         case 4.5: situ_4d5();break;
         case 5: situ_5(n);break;
+        case 5.5: situ_5d5();break;
         case 6: situ_6(n);break;
+        case 6.5: situ_6d5();break;
         case 7: situ_7(n);break;
+        case 7.5: situ_7d5();break;
         case 8: situ_8(n);break;
         case 9: situ_9(n);break;
         case 10: situ_10(n);break;
@@ -379,7 +382,7 @@
       }
     }
 
-    function situ_3d5_2(n){
+    function situ_3d5_2(){
       switch(choice[2]){
         case 1:
           set_inner("btn1","他們和你一樣");
@@ -486,39 +489,69 @@
     }
 
     function situ_5(n){
-      set_inner("btn1","");
-      set_inner("btn2","");
       switch(n){
         case 1:
-          document.body.style.backgroundImage = "url('src/6-1.png')";
-          //set_inner("scene","士林夜市");
-          //set_inner("btn1","打彈珠");
-          //set_inner("btn2","套圈圈");
+          set_inner("scene","來到士林夜市，當然要玩夜市遊戲！<br>「選哪個好呢...」");
+          create_img("src/img/彈珠台.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=3;
           break;
         case 2:
-          document.body.style.backgroundImage = "url('src/6-2.png')";
-          //set_inner("scene","兒童新樂園");
-          //set_inner("btn1","碰碰車");
-          //set_inner("btn2","旋轉木馬");
+          set_inner("scene","來到兒童新樂園，當然要玩遊樂設施！<br>「選哪個好呢...」");
+          create_img("src/img/旋轉木馬.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=4;
           break;
         case 3:
-          document.body.style.backgroundImage = "url('src/6-3.png')";
-          //set_inner("scene","故宮");
-          //set_inner("btn1","跟著導覽");
-          //set_inner("btn2","自己看");
+          set_inner("scene","來到故宮博物院，當然要好好欣賞這些藝術品！<br>「選哪個好呢...」");
+          create_img("src/img/故宮.PNG");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=5;
           break;
       }
       del_btn();
-      set_size("btn1","30 * var(--vh)","22 * var(--vh)");
-      set_size("btn2","30 * var(--vh)","22 * var(--vh)");
-      set_posi("btn1","25 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
-      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_5d5(){
+      create_btn();
+      switch(choice[5]){
+        case 1:
+          set_inner("btn1","打彈珠");
+          set_inner("btn2","套圈圈");
+          break;
+        case 2:
+          set_inner("btn1","碰碰車");
+          set_inner("btn2","旋轉木馬");
+          break;
+        case 3:
+          set_inner("btn1","跟著導覽人員");
+          set_inner("btn2","自己參觀");
+          break;
+      }
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_6(n){
+      set_inner("scene","玩得好累啊，<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
+      create_img("src/img/火鍋.PNG");
+      set_size("img1","40 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       switch(choice[5]){
         case 1:
           switch(n){
@@ -541,6 +574,7 @@
           }
           break;
         case 3:
+          set_inner("scene","看著這些藝術品...<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
           switch(n){
             case 1:
               ans[3]=2;
@@ -551,30 +585,58 @@
           }
           break;
       }
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_6d5(){
       create_btn();
-      set_size("btn1","10 * var(--vh)","25 * var(--vh)");
-      set_size("btn2","10 * var(--vh)","25 * var(--vh)");
-      set_size("btn3","10 * var(--vh)","25 * var(--vh)");
-      set_posi("btn1","33 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn2","54 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn3","76 * var(--vh)","calc((47 * var(--vw)) - (10 * var(--vh)))");
-      document.body.style.backgroundImage = "url('src/7-1.png')";
-      //set_inner("scene","火鍋");
-      //set_inner("btn1","貢丸");
-      //set_inner("btn2","米血");
-      //set_inner("btn3","百頁豆腐");
+      create_btn();
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn3","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","47.5 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn3","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("btn1","貢丸");
+      set_inner("btn2","米血");
+      set_inner("btn3","百頁豆腐");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_7(){
+      set_inner("scene","看著鴛鴦鍋裡熟悉的朋友們，<br>回想起那盞溫柔的阿婆小橙燈，<br>我該...");
+      create_img("src/img/火鍋.PNG");
+      set_size("img1","40 * var(--vh)","40 * var(--vh)");
+      set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       del_btn();
-      set_size("btn1","9 * var(--vh)","20 * var(--vh)");
-      set_size("btn2","9 * var(--vh)","20 * var(--vh)");
-      set_posi("btn1","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      set_posi("btn2","72 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
-      document.body.style.backgroundImage = "url('src/8-1.png')";
-      //set_inner("scene","想起阿罵的滷味攤");
-      //set_inner("btn1","回去");
-      //set_inner("btn2","繼續冒險");
+      del_btn();
+      set_inner("btn1","▼　CLICK HERE");
+      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      step-=0.5;
+      step=Math.round(step*10)/10;
+    }
+
+    function situ_7d5(){
+      create_btn();
+      set_size("btn1","10 * var(--vh)","20 * var(--vh)");
+      set_size("btn2","10 * var(--vh)","20 * var(--vh)");
+      set_posi("btn1","35 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("btn2","60 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_inner("btn1","回到阿嬤的滷味攤");
+      set_inner("btn2","繼續冒險");
+      set_inner("scene","");
+      del_img();
+      step-=0.5;
+      step=Math.round(step*10)/10;
     }
 
     function situ_8(n){
