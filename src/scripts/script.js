@@ -649,6 +649,7 @@
           break;
       }
       del_btn();
+      set_inner("btn1","");
       set_size("btn1","8 * var(--vh)","22 * var(--vh)");
       set_posi("btn1","88 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       result();
