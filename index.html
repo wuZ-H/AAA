@@ -27,14 +27,14 @@
     }
     button{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border-style:none;
       outline: 0;
-      height:calc(25 * var(--vh));
+      height:calc(100 * var(--vh));
       width:calc(50 * var(--vh));
       position: absolute;
       left:calc((50 * var(--vw)) - (25 * var(--vh)));
-      top:calc(75 * var(--vh));
+      top:calc(0 * var(--vh));
       z-index:2;
       font-size:calc(1.6 * var(--vh));
       font-family: "微軟正黑體", sans-serif;
@@ -119,6 +119,8 @@
 </head>
 <body>
 
+  <a id="dl" href="" download=""></a>
+  <audio id="bgm" src="src/msc/1.mp3" loop="loop"></audio>
   <img id="icon" src="src/img/logo.PNG"></img>
   <div id="scene">在一個吵雜的夜晚，<br>
   人們來來去去，讓時間慢下來的，<br>
