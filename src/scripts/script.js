@@ -5,11 +5,13 @@
     var counter_img=0;
     var choice=[0];
     var ans=[0,0,0,0,0,0,0];
+    var ans_nabe="球劇場";
+    var result_str="0";
+    var c_skin="#000000";
     var c_head="#000000";
     var c_body="#000000";
     var c_leg="#000000";
     var c_text="#000000";
-    var c_textbg="#000000";
     var info_text="";
     var QRinfo=[0,0,0,0,0,0,0,0,0,0];
     var _vh = window.innerHeight * 0.01;
@@ -33,6 +35,9 @@
           break;
         case 3:
           input_input3();
+          break;
+        case 4:
+          input_input4();
           break;
       }
     }
@@ -60,9 +65,8 @@
         case 7.5: situ_7d5();break;
         case 8: situ_8(n);break;
         case 9: situ_9(n);break;
-        case 10: situ_10(n);break;
-        case 11: situ_11(n);break;
-        case 12: situ_12(n);break;
+        case 10: situ_10();break;
+        case 11: situ_11();break;
       }
       step = step + 1;
     }
@@ -71,7 +75,7 @@
       set_inner("scene","「是貢丸誒欸！」小男孩說道...");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       del_img();
-      create_img("src/img/貢丸.png");
+      create_img("src/img/貢丸.PNG");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
@@ -80,16 +84,16 @@
       set_inner("scene","「啊～」");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (2 * var(--vh)))");
       del_img();
-      create_img("src/img/夾貢丸.png");
+      create_img("src/img/夾貢丸.PNG");
       set_size("img1","42 * var(--vh)","40 * var(--vh)");
       set_posi("img1","32 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
 
     function situ_m1(){
       set_inner("scene","這時身為貢丸的你會...");
-      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (7.5 * var(--vh)))");
       del_img();
-      create_img("src/img/貢丸飛.png");
+      create_img("src/img/貢丸飛.PNG");
       set_size("img1","42 * var(--vh)","40 * var(--vh)");
       set_posi("img1","32 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
@@ -110,9 +114,9 @@
     function situ_1(n){
       switch(n){
         case 1:
-          //document.body.style.backgroundImage = "url('src/2-1.png')";
           set_inner("scene","「這裡是哪裡，好暗啊！」<br>在陰暗的巷子中...");
-          create_img("src/img/小巷.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (9 * var(--vh)))");
+          create_img("src/img/小巷.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           //set_inner("btn1","被小狗叼走");
@@ -122,7 +126,8 @@
         case 2:
           //document.body.style.backgroundImage = "url('src/2-2.png')";
           set_inner("scene","「啊呀，這個世界好大呀！」<br>在這車水馬龍的路上，我該...");
-          create_img("src/img/大路.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+          create_img("src/img/大路.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           //set_inner("btn1","跟隨人群");
@@ -182,7 +187,7 @@
         case 1:
           //document.body.style.backgroundImage = "url('src/3-1.png')";
           set_inner("scene","「這就是人類最好的朋友嗎？」<br>我覺得它是...");
-          create_img("src/img/黑狗.png");
+          create_img("src/img/黑狗.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=3;
@@ -190,7 +195,8 @@
         case 2:
           //document.body.style.backgroundImage = "url('src/3-2.png')";
           set_inner("scene","「哈囉！你是老鼠嗎？你要跟著我...」");
-          create_img("src/img/勞贖.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (13.5 * var(--vh)))");
+          create_img("src/img/勞贖.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=5;
@@ -203,7 +209,8 @@
         case 1:
           //document.body.style.backgroundImage = "url('src/3-3.png')";
           set_inner("scene","「他們來來去去的，不知道要去哪，那我跟著他們好了...」<br>他們是...");
-          create_img("src/img/人群.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          create_img("src/img/人群.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=2;
@@ -211,7 +218,8 @@
         case 2:
           //document.body.style.backgroundImage = "url('src/3-4.png')";
           set_inner("scene","「我想去到對面，但是這些<br>跑得好快有四個輪子的怪物是什麼，我該...」");
-          create_img("src/img/過馬路.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (15 * var(--vh)))");
+          create_img("src/img/過馬路.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[1]=4;
@@ -285,12 +293,13 @@
     function situ_3_1(n){
       switch(choice[2]){
         case 1:
-          create_img("src/img/主人.png");
+          create_img("src/img/主人.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
               set_inner("scene","「不知道你未來的主人會是怎樣的人呢！」");
+              set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (14.4 * var(--vh)))");
               ans[4]=4;
               break;
             case 2:
@@ -301,7 +310,8 @@
           break;
         case 2:
           set_inner("scene","「哇～水流裡好像有星星般，微弱的閃爍著...」<br>水流是…");
-          create_img("src/img/星星.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
+          create_img("src/img/星星.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
@@ -320,7 +330,8 @@
       switch(choice[2]){
         case 1:
           set_inner("scene","我為什麼會想跟著他們呢...");
-          create_img("src/img/人群.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (9.5 * var(--vh)))");
+          create_img("src/img/人群.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
@@ -334,7 +345,8 @@
           break;
         case 2:
           set_inner("scene","「這個世界也太熱鬧了吧！咦，我走這裡好了...」");
-          create_img("src/img/大路.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (17.5 * var(--vh)))");
+          create_img("src/img/大路.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
@@ -401,7 +413,8 @@
           switch(choice[2]){
             case 1:
               set_inner("scene","「用狗狗的視角看了這個世界，<br>好奇妙啊，咦，你問我想去哪嗎...」");
-              create_img("src/img/狗刁貢丸.png");
+              set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (13 * var(--vh)))");
+              create_img("src/img/狗刁貢丸.PNG");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
               set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
@@ -415,7 +428,8 @@
               break;
             case 2:
               set_inner("scene","「第一次看到地底下的世界，<br>謝謝你小老鼠，陪我玩了這麼久，<br>什麼？再帶我去一個地方嗎...」");
-              create_img("src/img/勞贖2.png");
+              set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
+              create_img("src/img/勞贖2.PNG");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
               set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
@@ -433,7 +447,7 @@
           switch(choice[2]){
             case 1:
               set_inner("scene","「咦，你們到底要去到哪...」");
-              create_img("src/img/人群2.png");
+              create_img("src/img/人群2.PNG");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
               set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
@@ -447,7 +461,8 @@
               break;
             case 2:
               set_inner("scene","「終於來到這了，哇～這是...」");
-              create_img("src/img/人群2.png");
+              set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11.5 * var(--vh)))");
+              create_img("src/img/人群2.PNG");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
               set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
               switch(n){
@@ -492,21 +507,24 @@
       switch(n){
         case 1:
           set_inner("scene","來到士林夜市，當然要玩夜市遊戲！<br>「選哪個好呢...」");
-          create_img("src/img/彈珠台.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
+          create_img("src/img/夜市.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=3;
           break;
         case 2:
           set_inner("scene","來到兒童新樂園，當然要玩遊樂設施！<br>「選哪個好呢...」");
-          create_img("src/img/旋轉木馬.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
+          create_img("src/img/兒童新樂園.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=4;
           break;
         case 3:
           set_inner("scene","來到故宮博物院，當然要好好欣賞這些藝術品！<br>「選哪個好呢...」");
-          create_img("src/img/故宮.png");
+          set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
+          create_img("src/img/故宮.PNG");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           ans[5]=5;
@@ -549,7 +567,8 @@
 
     function situ_6(n){
       set_inner("scene","玩得好累啊，<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
-      create_img("src/img/火鍋.png");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
+      create_img("src/img/火鍋.PNG");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       switch(choice[5]){
@@ -611,9 +630,21 @@
       step=Math.round(step*10)/10;
     }
 
-    function situ_7(){
+    function situ_7(n){
+      switch(n){
+        case 1:
+          ans_nabe="球劇場";
+          break;
+        case 2:
+          ans_nabe="大劇場";
+          break;
+        case 3:
+          ans_nabe="藍盒子";
+          break;
+      }
       set_inner("scene","看著鴛鴦鍋裡熟悉的朋友們，<br>回想起那盞溫柔的阿婆小橙燈，<br>我該...");
-      create_img("src/img/火鍋.png");
+      set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      create_img("src/img/火鍋.PNG");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       del_btn();
@@ -640,6 +671,8 @@
     }
 
     function situ_8(n){
+      set_inner("btn1","");
+      set_inner("btn2","");
       switch(n){
         case 1:
           ans[6]=1;
@@ -648,127 +681,80 @@
           ans[6]=5;
           break;
       }
-      del_btn();
-      set_inner("btn1","");
-      set_size("btn1","8 * var(--vh)","22 * var(--vh)");
-      set_posi("btn1","88 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
+      set_size("btn1","5 * var(--vh)","26.5 * var(--vh)");
+      set_posi("btn1","198.8 * var(--vh)","calc((50 * var(--vw)) - (13.5 * var(--vh)))");
+      set_size("btn2","5 * var(--vh)","26.5 * var(--vh)");
+      set_posi("btn2","205.3 * var(--vh)","calc((50 * var(--vw)) - (13.5 * var(--vh)))");
       result();
-      create_3d(0);
-      set_size("threed","27 * var(--vh)","27 * var(--vh)");
-      set_posi("threed","18.6 * var(--vh)","calc((50 * var(--vw)) - (19 * var(--vh)))");
+      //create_3d(0);
+      //set_size("threed","27 * var(--vh)","27 * var(--vh)");
+      //set_posi("threed","18.6 * var(--vh)","calc((50 * var(--vw)) - (19 * var(--vh)))");
     }
 
     function situ_9(n){
-      document.body.style.backgroundImage = "url('src/選色.png')";
-      if(Number(counter_btn) < 2){
-        create_btn();
-      }
-      if(Number(counter_input) == 0){
-        create_form();
-        create_input("color");
-        create_input("color");
-        create_input("color");
-      }
-      else if(Number(counter_input) == 3){
-        del_input();
-        create_input("color");
-      }
-      set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
-      set_size("btn2","3.8 * var(--vh)","10.2 * var(--vh)");
-      set_size("input1","3.5 * var(--vh)","3.5 * var(--vh)");
-      set_size("input2","3.5 * var(--vh)","3.5 * var(--vh)");
-      set_size("input3","3.5 * var(--vh)","3.5 * var(--vh)");
-      set_size("threed","39.5 * var(--vh)","39.5 * var(--vh)");
-      set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
-      set_posi("btn2","76.5 * var(--vh)","calc((50 * var(--vw)) + (5.3 * var(--vh)))");
-      set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
-      set_posi("input2","26.7 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
-      set_posi("input3","36.4 * var(--vh)","calc((50 * var(--vw)) + (11 * var(--vh)))");
-      set_posi("threed","45 * var(--vh)","calc((50 * var(--vw)) - (20.2 * var(--vh)))");
-      document.getElementById("input1").value=c_head;
-      document.getElementById("input2").value=c_body;
-      document.getElementById("input3").value=c_leg;
-      document.getElementById("input1").style.backgroundColor=c_head;
-      document.getElementById("input2").style.backgroundColor=c_body;
-      document.getElementById("input3").style.backgroundColor=c_leg;
       switch(n){
         case 1:
+          step--;
           break;
         case 2:
-          situ_11(1);
-          step=11;
-          break;
-      }
-    }
-
-    function situ_10(n){
-      document.body.style.backgroundImage = "url('src/打字.png')";
-      del_input();
-      create_input("text");
-      set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
-      set_size("btn2","3.8 * var(--vh)","10.2 * var(--vh)");
-      set_size("input1","3.5 * var(--vh)","3.5 * var(--vh)");
-      set_size("input2","3.5 * var(--vh)","3.5 * var(--vh)");
-      set_size("input3","6.1 * var(--vh)","29.2 * var(--vh)");
-      set_size("threed","39.5 * var(--vh)","39.5 * var(--vh)");
-      set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) - (15 * var(--vh)))");
-      set_posi("btn2","76.5 * var(--vh)","calc((50 * var(--vw)) + (5.3 * var(--vh)))");
-      set_posi("input1","17.5 * var(--vh)","calc((50 * var(--vw)) + (11.3 * var(--vh)))");
-      set_posi("input2","25.5 * var(--vh)","calc((50 * var(--vw)) + (11.3 * var(--vh)))");
-      set_posi("input3","33.5 * var(--vh)","calc((50 * var(--vw)) - (14.8 * var(--vh)))");
-      set_posi("threed","45 * var(--vh)","calc((50 * var(--vw)) - (20.2 * var(--vh)))");
-      document.getElementById("input1").value=c_text;
-      document.getElementById("input2").value=c_textbg;
-      document.getElementById("input3").value=info_text;
-      document.getElementById("input1").style.backgroundColor=c_text;
-      document.getElementById("input2").style.backgroundColor=c_textbg;
-      document.getElementById("input3").style.borderRadius= "5px";
-      document.getElementById("input3").style.textAlign= "center";
-      document.getElementById("input3").style.overflow= "auto";
-      document.getElementById("input3").style.whiteSpace= "pre-wrap";
-      switch(n){
-        case 1:
-          step=8;
-          break;
-        case 2:
-          situ_11(1);
-          step=11;
-          break;
-      }
-    }
-
-    function situ_11(n){
-      switch(n){
-        case 1:
-          document.body.style.backgroundImage = "url('src/貢丸QRCODE.png')";
-          create_qrcode();
-          try{
-          del_form();
-          del_3d();
+          document.body.style.backgroundColor = "#ffffff";
+          del_img();
+          del_btn();
+          create_form();
+          create_input("color");
+          create_input("color");
+          create_input("color");
+          create_model();
+          set_inner("btn1","貢丸人製作下一步");
+          set_size("btn1","8 * var(--vh)","16 * var(--vh)");
+          set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
+          set_size("input2","3.2 * var(--vh)","3.2 * var(--vh)");
+          set_size("input3","3.2 * var(--vh)","3.2 * var(--vh)");
+          set_size("img1","40 * var(--vh)","40 * var(--vh)");
+          set_size("img2","40 * var(--vh)","40 * var(--vh)");
+          set_size("img3","40 * var(--vh)","40 * var(--vh)");
+          set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
+          set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+          set_posi("input2","17.1 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
+          set_posi("input3","29 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+          set_posi("img1","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          set_posi("img2","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          set_posi("img3","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          if(result_str!="場控"){
+            create_input("color");
+            set_size("img4","40 * var(--vh)","40 * var(--vh)");
+            set_size("input4","3.2 * var(--vh)","3.2 * var(--vh)");
+            set_posi("img4","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+            set_posi("input4","29 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
           }
-          catch(e){}
-          if(counter_btn>1){del_btn();}
-          set_size("btn1","10.5 * var(--vh)","10.5 * var(--vh)");
-          set_posi("btn1","82.9 * var(--vh)","calc((50 * var(--vw)) - (5 * var(--vh)))");
-          break;
-        case 2:
-          step--;
           break;
       }
     }
 
-    function situ_12(n){
-      switch(n){
-        case 1:
-          document.body.style.backgroundImage = "url('src/掃描.png')";
-          del_qrcode();
-          set_posi("btn1","85.8 * var(--vh)","calc((50 * var(--vw)) - (5 * var(--vh)))");
-          step-=2;
-          break;
-        case 2:
-          step--;
-          break;
+    function situ_10(){
+      while(counter_input>0){
+        del_input();
       }
+      create_input("color");
+      create_input("text");
+      set_inner("btn1","貢丸人出爐");
+      set_size("btn1","8 * var(--vh)","16 * var(--vh)");
+      set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
+      set_size("input2","3.6 * var(--vh)","36 * var(--vh)");
+      set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
+      set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+      set_posi("input2","29 * var(--vh)","calc((50 * var(--vw)) - (18 * var(--vh)))");
+    }
+
+    function situ_11(){
+      set_inner("scene","專屬貢丸人條碼");
+      set_posi("scene","18 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+      create_qrcode();
+      del_btn();
+      while(counter_img>0){
+        del_img();
+      }
+      del_form();
     }
 
     function result(){
@@ -783,7 +769,7 @@
       var result_7=[a==2||a==4||a==5,	a==4||a==5,	a==2||a==5,	a==3||a==4,		a==1||a==3||a==5,	a==3,			a==5];
       var result_s=[result_1,result_2,result_3,result_4,result_5,result_6,result_7];
       var result_n=["導演","場務","場控","舞監","服化","攝影","特技"];
-      var result_str=result_n[0];
+      result_str=result_n[0];
       var i=0;
       var j=0;
       var i_max=0;
@@ -812,7 +798,9 @@
           i_max=i;
         }
       }
-    document.body.style.backgroundImage = "url('src/"+result_str+".png')";
+    create_img("src/img/result/" + result_str + "/" + result_str + " 網頁 " + ans_nabe +".png");
+    set_size("img1","213.53 * var(--vh)","50 * var(--vh)");
+    set_posi("img1","0","calc((50 * var(--vw)) - (25 * var(--vh)))");
     //QRinfo[16]=result_str;
     //set_inner("scene",result_str);
     //set_inner("btn_num","result="+result);
@@ -823,36 +811,74 @@
       document.getElementById("input1").style.backgroundColor=document.getElementById("input1").value;
       switch(step){
         case 10:
-          c_head=document.getElementById("input1").value;
+          c_skin=document.getElementById("input1").value;
           break;
-        case 9:
+        case 11:
           c_text=document.getElementById("input1").value;
           break;
       }
     }
 
     function input_input2(){
-      document.getElementById("input2").style.backgroundColor=document.getElementById("input2").value;
       switch(step){
         case 10:
+          document.getElementById("input2").style.backgroundColor=document.getElementById("input2").value;
           c_body=document.getElementById("input2").value;
+          if(result_str!="場控"){
+            c_leg=document.getElementById("input2").value;
+          }
           break;
-        case 9:
-          c_textbg=document.getElementById("input2").value;
+        case 11:
+          info_text=document.getElementById("input2").value;
           break;
       }
     }
 
     function input_input3(){
-      switch(step){
-        case 10:
-          document.getElementById("input3").style.backgroundColor=document.getElementById("input3").value;
-          c_leg=document.getElementById("input3").value;
-          break;
-        case 9:
-          info_text=document.getElementById("input3").value;
-          break;
+      document.getElementById("input3").style.backgroundColor=document.getElementById("input3").value;
+      c_head=document.getElementById("input3").value;
+    }
+
+    function input_input4(){
+      document.getElementById("input4").style.backgroundColor=document.getElementById("input4").value;
+      c_leg=document.getElementById("input4").value;
+    }
+
+    function create_model(){
+      create_img("src/img/model/body.png");
+      var model=document.createElement("div");
+      model.setAttribute("id","model" + counter_img);
+      document.body.appendChild(model);
+      model=document.getElementById("model" + counter_img);
+      //model.style.maskImage="url(src/img/model/body.png)";
+      model.style.webkitMaskImage="url(src/img/model/body.png)";
+
+      create_img("src/img/model/"+result_str+"/clothing.png");
+      var model=document.createElement("div");
+      model.setAttribute("id","model" + counter_img);
+      document.body.appendChild(model);
+      model=document.getElementById("model" + counter_img);
+      //model.style.maskImage="url(src/img/model/"+result_str+"/clothing.png)";
+      model.style.webkitMaskImage="url(src/img/model/"+result_str+"/clothing.png)";
+
+      create_img("src/img/model/"+result_str+"/hat.png");
+      var model=document.createElement("div");
+      model.setAttribute("id","model" + counter_img);
+      document.body.appendChild(model);
+      model=document.getElementById("model" + counter_img);
+      //model.style.maskImage="url(src/img/model/"+result_str+"/hat.png)";
+      model.style.webkitMaskImage="url(src/img/model/"+result_str+"/hat.png)";
+
+      if(result_str!="場控"){
+        create_img("src/img/model/"+result_str+"/pants.png");
+        var model=document.createElement("div");
+        model.setAttribute("id","model" + counter_img);
+        document.body.appendChild(model);
+        model=document.getElementById("model" + counter_img);
+        //model.style.maskImage="url(src/img/model/"+result_str+"/pants.png)";
+        model.style.webkitMaskImage="url(src/img/model/"+result_str+"/pants.png)";
       }
+      
     }
 
     function create_btn(){
@@ -888,21 +914,21 @@
       var div=document.createElement("div");
       div.setAttribute("id","qrcode1");
       document.body.appendChild(div);
-      QRinfo[0]=colorcodeToRGB(c_head)[0];
-      QRinfo[1]=colorcodeToRGB(c_head)[1];
-      QRinfo[2]=colorcodeToRGB(c_head)[2];
-      QRinfo[3]=colorcodeToRGB(c_body)[0];
-      QRinfo[4]=colorcodeToRGB(c_body)[1];
-      QRinfo[5]=colorcodeToRGB(c_body)[2];
-      QRinfo[6]=colorcodeToRGB(c_leg)[0];
-      QRinfo[7]=colorcodeToRGB(c_leg)[1];
-      QRinfo[8]=colorcodeToRGB(c_leg)[2];
-      QRinfo[9]=colorcodeToRGB(c_text)[0];
-      QRinfo[10]=colorcodeToRGB(c_text)[1];
-      QRinfo[11]=colorcodeToRGB(c_text)[2];
-      QRinfo[12]=colorcodeToRGB(c_textbg)[0];
-      QRinfo[13]=colorcodeToRGB(c_textbg)[1];
-      QRinfo[14]=colorcodeToRGB(c_textbg)[2];
+      QRinfo[0]=colorcodeToRGB(c_skin)[0];
+      QRinfo[1]=colorcodeToRGB(c_skin)[1];
+      QRinfo[2]=colorcodeToRGB(c_skin)[2];
+      QRinfo[3]=colorcodeToRGB(c_head)[0];
+      QRinfo[4]=colorcodeToRGB(c_head)[1];
+      QRinfo[5]=colorcodeToRGB(c_head)[2];
+      QRinfo[6]=colorcodeToRGB(c_body)[0];
+      QRinfo[7]=colorcodeToRGB(c_body)[1];
+      QRinfo[8]=colorcodeToRGB(c_body)[2];
+      QRinfo[9]=colorcodeToRGB(c_leg)[0];
+      QRinfo[10]=colorcodeToRGB(c_leg)[1];
+      QRinfo[11]=colorcodeToRGB(c_leg)[2];
+      QRinfo[12]=colorcodeToRGB(c_text)[0];
+      QRinfo[13]=colorcodeToRGB(c_text)[1];
+      QRinfo[14]=colorcodeToRGB(c_text)[2];
       QRinfo[15]=info_text;
       var qrcode=new QRCode(document.getElementById("qrcode1"));
       qrcode.makeCode(QRinfo.toString());
@@ -979,7 +1005,7 @@
       document.documentElement.style.setProperty('--vw',_vw+'px');
       create_btn();
       set_inner("btn1","▼　CLICK HERE");
-      create_img("src/img/滷味攤.png");
+      create_img("src/img/滷味攤.PNG");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
