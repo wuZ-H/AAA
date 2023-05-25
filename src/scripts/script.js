@@ -704,7 +704,8 @@
           step--;
           break;
         case 2:
-          document.body.style.backgroundColor = "#ffffff";
+          document.body.style.backgroundColor = "#efba3a";
+          set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;連身工作服<br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
           del_img();
           del_btn();
           create_form();
@@ -720,37 +721,46 @@
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_size("img2","40 * var(--vh)","40 * var(--vh)");
           set_size("img3","40 * var(--vh)","40 * var(--vh)");
+          set_posi("scene","17.5 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
           set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
           set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
           set_posi("input2","17.1 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
-          set_posi("input3","29 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+          set_posi("input3","27.2 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
           set_posi("img1","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           set_posi("img2","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           set_posi("img3","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           if(result_str!="場控"){
+            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
             create_input("color");
             set_size("img4","40 * var(--vh)","40 * var(--vh)");
             set_size("input4","3.2 * var(--vh)","3.2 * var(--vh)");
             set_posi("img4","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
-            set_posi("input4","29 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
+            set_posi("input4","27.2 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
+          }
+          if(result_str=="特技"){
+            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>頭盔&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
+          }
+          if(result_str=="舞監"){
+            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>眼鏡&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
           }
           break;
       }
     }
 
     function situ_10(){
+      set_inner("scene","名字的顏色&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br><br>貢丸人的名字(僅可輸入英文)");
       while(counter_input>0){
         del_input();
       }
       create_input("color");
       create_input("text");
       set_inner("btn1","貢丸人出爐");
-      set_size("btn1","8 * var(--vh)","16 * var(--vh)");
+      set_size("btn1","8 * var(--vh)","17 * var(--vh)");
       set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
       set_size("input2","3.6 * var(--vh)","36 * var(--vh)");
       set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
       set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
-      set_posi("input2","29 * var(--vh)","calc((50 * var(--vw)) - (18 * var(--vh)))");
+      set_posi("input2","28 * var(--vh)","calc((50 * var(--vw)) - (18 * var(--vh)))");
     }
 
     function situ_11(){
@@ -831,7 +841,7 @@
         case 10:
           document.getElementById("input2").style.backgroundColor=document.getElementById("input2").value;
           c_body=document.getElementById("input2").value;
-          if(result_str!="場控"){
+          if(result_str=="場控"){
             c_leg=document.getElementById("input2").value;
           }
           break;
