@@ -76,6 +76,9 @@
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       del_img();
       create_img("src/img/貢丸.PNG");
+      var bgm=document.getElementById("bgm");
+      bgm.play();
+      bgm.volume=0.4;
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
     }
@@ -136,9 +139,9 @@
           break;
       }
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -175,9 +178,9 @@
           break;
       }
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -283,9 +286,9 @@
           break;
       }
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -478,9 +481,9 @@
           break;
       }
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -532,9 +535,9 @@
       }
       del_btn();
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -605,9 +608,9 @@
           break;
       }
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -649,9 +652,9 @@
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       del_btn();
       del_btn();
-      set_inner("btn1","▼　CLICK HERE");
-      set_size("btn1","25 * var(--vh)","50 * var(--vh)");
-      set_posi("btn1","75 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_size("btn1","100 * var(--vh)","50 * var(--vh)");
+      set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
       step=Math.round(step*10)/10;
     }
@@ -694,6 +697,10 @@
     function situ_9(n){
       switch(n){
         case 1:
+          var dl= document.getElementById("dl");
+          dl.setAttribute("href","src/img/result/" + result_str + "/" + result_str + " 結果 " + ans_nabe +".png");
+          dl.setAttribute("download","測驗結果");
+          dl.click();
           step--;
           break;
         case 2:
@@ -1004,7 +1011,7 @@
       document.documentElement.style.setProperty('--vh',_vh+'px');
       document.documentElement.style.setProperty('--vw',_vw+'px');
       create_btn();
-      set_inner("btn1","▼　CLICK HERE");
+      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
       create_img("src/img/滷味攤.PNG");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
