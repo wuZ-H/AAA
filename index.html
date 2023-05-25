@@ -27,7 +27,7 @@
     }
     button{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border-style:none;
       outline: 0;
       height:calc(25 * var(--vh));
@@ -69,6 +69,9 @@
     input.color::-webkit-color-swatch{
       border:none;
       border-radius: 50%;
+    }
+    input.text{
+      border-radius: 10px;
     }
     canvas{
       height:inherit;
@@ -116,7 +119,7 @@
 </head>
 <body>
 
-  <img id="icon" src="src/img/logo.png"></img>
+  <img id="icon" src="src/img/logo.PNG"></img>
   <div id="scene">在一個吵雜的夜晚，<br>
   人們來來去去，讓時間慢下來的，<br>
   只有路旁推著滷味攤的阿婆，<br>
