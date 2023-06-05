@@ -139,7 +139,7 @@
           break;
       }
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -178,7 +178,7 @@
           break;
       }
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -286,7 +286,7 @@
           break;
       }
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -481,7 +481,7 @@
           break;
       }
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -535,7 +535,7 @@
       }
       del_btn();
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -608,7 +608,7 @@
           break;
       }
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -652,7 +652,7 @@
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
       del_btn();
       del_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       set_size("btn1","100 * var(--vh)","50 * var(--vh)");
       set_posi("btn1","0 * var(--vh)","calc((50 * var(--vw)) - (25 * var(--vh)))");
       step-=0.5;
@@ -674,6 +674,7 @@
     }
 
     function situ_8(n){
+      document.body.style.backgroundColor = "#efba3a";
       set_inner("btn1","");
       set_inner("btn2","");
       switch(n){
@@ -704,44 +705,38 @@
           step--;
           break;
         case 2:
-          document.body.style.backgroundColor = "#efba3a";
-          set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;連身工作服<br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
+          set_inner("scene","皮膚<br><br><br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br><br><br><br><br><br><br><br><br><br><br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;連身工作服");
           del_img();
           del_btn();
           create_form();
           create_input("color");
           create_input("color");
           create_input("color");
-          create_model();
+          create_img("src/img/model/"+result_str+".png");
           set_inner("btn1","貢丸人製作下一步");
           set_size("btn1","8 * var(--vh)","16 * var(--vh)");
           set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
           set_size("input2","3.2 * var(--vh)","3.2 * var(--vh)");
           set_size("input3","3.2 * var(--vh)","3.2 * var(--vh)");
-          set_size("img1","40 * var(--vh)","40 * var(--vh)");
-          set_size("img2","40 * var(--vh)","40 * var(--vh)");
-          set_size("img3","40 * var(--vh)","40 * var(--vh)");
-          set_posi("scene","17.5 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
+          set_size("img1","45 * var(--vh)","26 * var(--vh)");
+          set_posi("scene","14 * var(--vh)","calc((50 * var(--vw)) - (21 * var(--vh)))");
           set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
-          set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
-          set_posi("input2","17.1 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
-          set_posi("input3","27.2 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
-          set_posi("img1","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
-          set_posi("img2","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
-          set_posi("img3","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
+          set_posi("input1","14 * var(--vh)","calc((50 * var(--vw)) + (6 * var(--vh)))");
+          set_posi("input2","71.5 * var(--vh)","calc((50 * var(--vw)) + (18 * var(--vh)))");
+          set_posi("input3","30 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
+          set_posi("img1","28 * var(--vh)","calc((50 * var(--vw)) - (13 * var(--vh)))");
           if(result_str!="場控"){
-            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
+            set_inner("scene","皮膚<br><br><br><br><br>帽子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br><br><br><br><br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>褲子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
             create_input("color");
-            set_size("img4","40 * var(--vh)","40 * var(--vh)");
+            set_posi("input2","52.5 * var(--vh)","calc((50 * var(--vw)) + (18 * var(--vh)))");
             set_size("input4","3.2 * var(--vh)","3.2 * var(--vh)");
-            set_posi("img4","36 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
-            set_posi("input4","27.2 * var(--vh)","calc((50 * var(--vw)) + (15 * var(--vh)))");
+            set_posi("input4","62 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
           }
           if(result_str=="特技"){
-            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>頭盔&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
+            set_inner("scene","皮膚<br><br><br><br><br>頭盔&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br><br><br><br><br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>褲子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
           }
           if(result_str=="舞監"){
-            set_inner("scene","皮膚&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>眼鏡&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;褲子");
+            set_inner("scene","皮膚<br><br><br><br><br>眼鏡&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br><br><br><br><br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;上衣<br><br><br>褲子&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;");
           }
           break;
       }
@@ -752,6 +747,7 @@
       while(counter_input>0){
         del_input();
       }
+      del_img();
       create_input("color");
       create_input("text");
       set_inner("btn1","貢丸人出爐");
@@ -759,7 +755,7 @@
       set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
       set_size("input2","3.6 * var(--vh)","36 * var(--vh)");
       set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
-      set_posi("input1","17.1 * var(--vh)","calc((50 * var(--vw)) - (6 * var(--vh)))");
+      set_posi("input1","13.8 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
       set_posi("input2","28 * var(--vh)","calc((50 * var(--vw)) - (18 * var(--vh)))");
     }
 
@@ -861,7 +857,7 @@
       c_leg=document.getElementById("input4").value;
     }
 
-    function create_model(){
+    /*function create_model(){
       create_img("src/img/model/body.png");
       var model=document.createElement("div");
       model.setAttribute("id","model" + counter_img);
@@ -895,8 +891,7 @@
         //model.style.maskImage="url(src/img/model/"+result_str+"/pants.png)";
         model.style.webkitMaskImage="url(src/img/model/"+result_str+"/pants.png)";
       }
-      
-    }
+    }*/
 
     function create_btn(){
       counter_btn++;
@@ -1021,7 +1016,7 @@
       document.documentElement.style.setProperty('--vh',_vh+'px');
       document.documentElement.style.setProperty('--vw',_vw+'px');
       create_btn();
-      set_inner("btn1","<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>▼　CLICK HERE");
+      set_inner("btn1","");
       create_img("src/img/滷味攤.png");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
