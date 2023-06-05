@@ -16,6 +16,7 @@
     var QRinfo=[0,0,0,0,0,0,0,0,0,0];
     var _vh = window.innerHeight * 0.01;
     var _vw = window.innerWidth * 0.01;
+    var timer_set_inner;
     
     function btn_click(btn_num) {
       choose(btn_num);
@@ -72,7 +73,7 @@
     }
 
     function situ_m3(){
-      set_inner("scene","「是貢丸誒欸！」小男孩說道...");
+      set_inner_animation("scene","「是貢丸誒欸！」小男孩說道...");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       del_img();
       create_img("src/img/貢丸.png");
@@ -84,7 +85,7 @@
     }
 
     function situ_m2(){
-      set_inner("scene","「啊～」");
+      set_inner_animation("scene","「啊～」");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (2 * var(--vh)))");
       del_img();
       create_img("src/img/夾貢丸.png");
@@ -93,7 +94,7 @@
     }
 
     function situ_m1(){
-      set_inner("scene","這時身為貢丸的你會...");
+      set_inner_animation("scene","這時身為貢丸的你會...");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (7.5 * var(--vh)))");
       del_img();
       create_img("src/img/貢丸飛.png");
@@ -117,7 +118,7 @@
     function situ_1(n){
       switch(n){
         case 1:
-          set_inner("scene","「這裡是哪裡，好暗啊！」<br>在陰暗的巷子中...");
+          set_inner_animation("scene","「這裡是哪裡，好暗啊！」<br>在陰暗的巷子中...");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (9 * var(--vh)))");
           create_img("src/img/小巷.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -128,7 +129,7 @@
           break;
         case 2:
           //document.body.style.backgroundImage = "url('src/2-2.png')";
-          set_inner("scene","「啊呀，這個世界好大呀！」<br>在這車水馬龍的路上，我該...");
+          set_inner_animation("scene","「啊呀，這個世界好大呀！」<br>在這車水馬龍的路上，我該...");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
           create_img("src/img/大路.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -189,7 +190,7 @@
       switch(n){
         case 1:
           //document.body.style.backgroundImage = "url('src/3-1.png')";
-          set_inner("scene","「這就是人類最好的朋友嗎？」<br>我覺得它是...");
+          set_inner_animation("scene","「這就是人類最好的朋友嗎？」<br>我覺得它是...");
           create_img("src/img/黑狗.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
@@ -197,7 +198,7 @@
           break;
         case 2:
           //document.body.style.backgroundImage = "url('src/3-2.png')";
-          set_inner("scene","「哈囉！你是老鼠嗎？你要跟著我...」");
+          set_inner_animation("scene","「哈囉！你是老鼠嗎？你要跟著我...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (13.5 * var(--vh)))");
           create_img("src/img/勞贖.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -211,7 +212,7 @@
       switch(n){
         case 1:
           //document.body.style.backgroundImage = "url('src/3-3.png')";
-          set_inner("scene","「他們來來去去的，不知道要去哪，那我跟著他們好了...」<br>他們是...");
+          set_inner_animation("scene","「他們來來去去的，不知道要去哪，那我跟著他們好了...」<br>他們是...");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           create_img("src/img/人群.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -220,7 +221,7 @@
           break;
         case 2:
           //document.body.style.backgroundImage = "url('src/3-4.png')";
-          set_inner("scene","「我想去到對面，但是這些<br>跑得好快有四個輪子的怪物是什麼，我該...」");
+          set_inner_animation("scene","「我想去到對面，但是這些<br>跑得好快有四個輪子的怪物是什麼，我該...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (15 * var(--vh)))");
           create_img("src/img/過馬路.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -301,18 +302,18 @@
           set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
           switch(n){
             case 1:
-              set_inner("scene","「不知道你未來的主人會是怎樣的人呢！」");
+              set_inner_animation("scene","「不知道你未來的主人會是怎樣的人呢！」");
               set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (14.4 * var(--vh)))");
               ans[4]=4;
               break;
             case 2:
-              set_inner("scene","「你的主人會是怎樣的人呢？」");
+              set_inner_animation("scene","「你的主人會是怎樣的人呢？」");
               ans[4]=2;
               break;
           }
           break;
         case 2:
-          set_inner("scene","「哇～水流裡好像有星星般，微弱的閃爍著...」<br>水流是…");
+          set_inner_animation("scene","「哇～水流裡好像有星星般，微弱的閃爍著...」<br>水流是…");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
           create_img("src/img/星星.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -332,7 +333,7 @@
     function situ_3_2(n){
       switch(choice[2]){
         case 1:
-          set_inner("scene","我為什麼會想跟著他們呢...");
+          set_inner_animation("scene","我為什麼會想跟著他們呢...");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (9.5 * var(--vh)))");
           create_img("src/img/人群.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -347,7 +348,7 @@
           }
           break;
         case 2:
-          set_inner("scene","「這個世界也太熱鬧了吧！咦，我走這裡好了...」");
+          set_inner_animation("scene","「這個世界也太熱鬧了吧！咦，我走這裡好了...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (17.5 * var(--vh)))");
           create_img("src/img/大路.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -415,7 +416,7 @@
         case 1:
           switch(choice[2]){
             case 1:
-              set_inner("scene","「用狗狗的視角看了這個世界，<br>好奇妙啊，咦，你問我想去哪嗎...」");
+              set_inner_animation("scene","「用狗狗的視角看了這個世界，<br>好奇妙啊，咦，你問我想去哪嗎...」");
               set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (13 * var(--vh)))");
               create_img("src/img/狗刁貢丸.png");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -430,7 +431,7 @@
               }
               break;
             case 2:
-              set_inner("scene","「第一次看到地底下的世界，<br>謝謝你小老鼠，陪我玩了這麼久，<br>什麼？再帶我去一個地方嗎...」");
+              set_inner_animation("scene","「第一次看到地底下的世界，<br>謝謝你小老鼠，陪我玩了這麼久，<br>什麼？再帶我去一個地方嗎...」");
               set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
               create_img("src/img/勞贖2.png");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -449,7 +450,7 @@
         case 2:
           switch(choice[2]){
             case 1:
-              set_inner("scene","「咦，你們到底要去到哪...」");
+              set_inner_animation("scene","「咦，你們到底要去到哪...」");
               create_img("src/img/人群2.png");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
               set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
@@ -463,7 +464,7 @@
               }
               break;
             case 2:
-              set_inner("scene","「終於來到這了，哇～這是...」");
+              set_inner_animation("scene","「終於來到這了，哇～這是...」");
               set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11.5 * var(--vh)))");
               create_img("src/img/人群2.png");
               set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -509,7 +510,7 @@
     function situ_5(n){
       switch(n){
         case 1:
-          set_inner("scene","來到士林夜市，當然要玩夜市遊戲！<br>「選哪個好呢...」");
+          set_inner_animation("scene","來到士林夜市，當然要玩夜市遊戲！<br>「選哪個好呢...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
           create_img("src/img/夜市.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -517,7 +518,7 @@
           ans[5]=3;
           break;
         case 2:
-          set_inner("scene","來到兒童新樂園，當然要玩遊樂設施！<br>「選哪個好呢...」");
+          set_inner_animation("scene","來到兒童新樂園，當然要玩遊樂設施！<br>「選哪個好呢...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
           create_img("src/img/兒童新樂園.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -525,7 +526,7 @@
           ans[5]=4;
           break;
         case 3:
-          set_inner("scene","來到故宮博物院，當然要好好欣賞這些藝術品！<br>「選哪個好呢...」");
+          set_inner_animation("scene","來到故宮博物院，當然要好好欣賞這些藝術品！<br>「選哪個好呢...」");
           set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (16 * var(--vh)))");
           create_img("src/img/故宮.png");
           set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -569,7 +570,7 @@
     }
 
     function situ_6(n){
-      set_inner("scene","玩得好累啊，<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
+      set_inner_animation("scene","玩得好累啊，<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (12 * var(--vh)))");
       create_img("src/img/火鍋.png");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -596,7 +597,7 @@
           }
           break;
         case 3:
-          set_inner("scene","看著這些藝術品...<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
+          set_inner_animation("scene","看著這些藝術品...<br>「這是什麼味道，怎麼這麼熟悉...」<br>沿著味道去...<br>「是火鍋！那是...」<br>我第一眼會看到...");
           switch(n){
             case 1:
               ans[3]=2;
@@ -645,7 +646,7 @@
           ans_nabe="藍盒子";
           break;
       }
-      set_inner("scene","看著鴛鴦鍋裡熟悉的朋友們，<br>回想起那盞溫柔的阿婆小橙燈，<br>我該...");
+      set_inner_animation("scene","看著鴛鴦鍋裡熟悉的朋友們，<br>回想起那盞溫柔的阿婆小橙燈，<br>我該...");
       set_posi("scene","22 * var(--vh)","calc((50 * var(--vw)) - (11 * var(--vh)))");
       create_img("src/img/火鍋.png");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
@@ -748,15 +749,18 @@
         del_input();
       }
       del_img();
+      create_img("src/img/model/製作中.png");
       create_input("color");
       create_input("text");
       set_inner("btn1","貢丸人出爐");
       set_size("btn1","8 * var(--vh)","17 * var(--vh)");
       set_size("input1","3.2 * var(--vh)","3.2 * var(--vh)");
       set_size("input2","3.6 * var(--vh)","36 * var(--vh)");
+      set_size("img1","45 * var(--vh)","31.2 * var(--vh)");
       set_posi("btn1","83.1 * var(--vh)","calc((50 * var(--vw)) + (4.1 * var(--vh)))");
       set_posi("input1","13.8 * var(--vh)","calc((50 * var(--vw)) - (10 * var(--vh)))");
       set_posi("input2","28 * var(--vh)","calc((50 * var(--vw)) - (18 * var(--vh)))");
+      set_posi("img1","28 * var(--vh)","calc((50 * var(--vw)) - (15.6 * var(--vh)))");
     }
 
     function situ_11(){
@@ -992,8 +996,24 @@
       document.getElementById(i).style.left="calc("+l+")";
     }
 
-    function set_inner(id,i){
-      document.getElementById(id).innerHTML=i;
+    function set_inner(id,inner){
+      document.getElementById(id).innerHTML=inner;
+    }
+
+    function set_inner_animation(id,inner){
+      var i=0;
+      document.getElementById(id).innerHTML="";
+      set_inner_timer(id,inner,i);
+    }
+
+    function set_inner_timer(id,inner,i){
+      clearTimeout(timer_set_inner);
+      timer_set_inner=null;
+      if(i<=inner.length){
+        document.getElementById(id).innerHTML = inner.substr(0,i);
+        i++;
+        timer_set_inner=setTimeout(function(){set_inner_timer(id,inner,i)},100);
+      }
     }
 
     function colorcodeToRGB(color){
@@ -1016,6 +1036,7 @@
       document.documentElement.style.setProperty('--vh',_vh+'px');
       document.documentElement.style.setProperty('--vw',_vw+'px');
       create_btn();
+      set_inner_animation("scene","在一個吵雜的夜晚，<br>人們來來去去，讓時間慢下來的，<br>只有路旁推著滷味攤的阿婆，<br>那是一盞，微弱卻溫柔的小橙燈，<br>吸收了世間的喧嘩");
       set_inner("btn1","");
       create_img("src/img/滷味攤.png");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
