@@ -17,9 +17,12 @@
     var _vh = window.innerHeight * 0.01;
     var _vw = window.innerWidth * 0.01;
     var timer_set_inner;
+    var t=null;
+    var btn_number=0;
     
     function btn_click(btn_num) {
-      choose(btn_num);
+      btn_number=btn_num;
+      maku();
     }
 
     function form_submit(){
@@ -676,6 +679,8 @@
 
     function situ_8(n){
       document.body.style.backgroundColor = "#efba3a";
+      var maku=document.getElementById("maku");
+      maku.style.backgroundColor = "#efba3a";
       set_inner("btn1","");
       set_inner("btn2","");
       switch(n){
@@ -1028,6 +1033,40 @@
       return RGB;
     }
 
+    function maku(){
+      var maku=document.getElementById("maku");
+      maku.style.zIndex="4";
+      t=setTimeout(function timer(){
+        var maku=document.getElementById("maku");
+        maku.style.opacity= Number(maku.style.opacity)+0.1;
+        if(Number(maku.style.opacity)<1){t=setTimeout(timer,100);}
+        else{
+          clearTimeout(timer_set_inner);
+          timer_set_inner=null;
+          clearTimeout(t);
+          t=null;
+          choose(btn_number);
+          try{document.body.img[counter_img].addEventListener("load",load_last);}
+          catch{load_last();}
+        }
+      },100);
+    }
+
+    function load_last(){
+      document.body.lastChild.removeEventListener("load",load_last);
+      var maku=document.getElementById("maku");
+      t=setTimeout(function timer(){
+        var maku=document.getElementById("maku");
+        maku.style.opacity= Number(maku.style.opacity) - 0.1;
+        if(Number(maku.style.opacity)>0){t=setTimeout(timer,100);}
+        else{
+          clearTimeout(t);
+          t=null;
+          maku.style.zIndex="-2";
+        }
+      },100);
+    }
+
     function window_load(){
       _vh = window.innerHeight * 0.01;
       _vw = window.innerWidth * 0.01;
@@ -1037,7 +1076,6 @@
       document.documentElement.style.setProperty('--vw',_vw+'px');
       create_btn();
       set_inner_animation("scene","在一個吵雜的夜晚，<br>人們來來去去，讓時間慢下來的，<br>只有路旁推著滷味攤的阿婆，<br>那是一盞，微弱卻溫柔的小橙燈，<br>吸收了世間的喧嘩");
-      set_inner("btn1","");
       create_img("src/img/滷味攤.png");
       set_size("img1","40 * var(--vh)","40 * var(--vh)");
       set_posi("img1","34 * var(--vh)","calc((50 * var(--vw)) - (20 * var(--vh)))");
