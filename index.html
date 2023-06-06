@@ -27,7 +27,7 @@
     }
     button{
       cursor: pointer; 
-      background-color:RGBA(0,0,0,0);
+      background-color:RGBA(0,0,0,0.2);
       border-style:none;
       outline: 0;
       height:calc(100 * var(--vh));
@@ -100,6 +100,7 @@
       position: absolute;
       left:calc((50 * var(--vw)) - (25 * var(--vh)));
       top:calc(2 * var(--vh));
+      z-index: 3;
     }
     div{
       position: absolute;
@@ -114,6 +115,52 @@
       left:calc((50 * var(--vw)) - (12 * var(--vh)));
       top:calc(22 * var(--vh));
     }
+    #maku{
+      background-color:#D9D9D9;
+      opacity: 0;
+      left:0;
+      top:0;
+      height:calc(100 * var(--vh));
+      width:calc(100 * var(--vw));
+      z-index: -2;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+    }
+    @keyframes maku {
+      0%{
+        z-index: 4;
+        opacity: 0;
+      }
+      25%{
+        opacity: 0.25;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      75%{
+        opacity: 0.75;
+      }
+      100%{
+        opacity: 1;
+      }
+    @keyframes maku_end {
+      0%{
+        opacity: 1;
+      }
+      25%{
+        opacity: 0.75;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      75%{
+        opacity: 0.25;
+      }
+      100%{
+        z-index: -2;
+        opacity: 0;
+      }
+    }
   </style>
 
 </head>
@@ -123,6 +170,7 @@
   <audio id="bgm" src="src/msc/1.mp3" loop="loop"></audio>
   <img id="icon" src="src/img/logo.png"></img>
   <div id="scene"></div>
+  <div id="maku"></div>
 
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
