@@ -1036,6 +1036,7 @@
     function maku(){
       var maku=document.getElementById("maku");
       maku.style.zIndex="4";
+      set_inner("maku","LOADING...")
       t=setTimeout(function timer(){
         var maku=document.getElementById("maku");
         maku.style.opacity= Number(maku.style.opacity)+0.1;
@@ -1060,6 +1061,7 @@
         maku.style.opacity= Number(maku.style.opacity) - 0.1;
         if(Number(maku.style.opacity)>0){t=setTimeout(timer,100);}
         else{
+          set_inner("maku","")
           clearTimeout(t);
           t=null;
           maku.style.zIndex="-2";
